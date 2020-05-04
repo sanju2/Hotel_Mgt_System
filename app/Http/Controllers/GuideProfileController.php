@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Mail;
 use App\Guide;
 use Illuminate\Http\Request;
 
@@ -12,14 +13,14 @@ class GuideProfileController extends Controller
     public function display()
     {
         $guides = Guide::all();
-        return view('guideform')->with('guides', $guides);
+        return view('guide.guideform')->with('guides', $guides);
     }
-   
+
 
     public function edit($id)
     {
         $guides = Guide::find($id);
-        return view('guideupdateform')->with('guides', $guides);
+        return view('guide.guideupdateform')->with('guides', $guides);
     }
 
     public function update(Request $request, $id)
@@ -67,7 +68,7 @@ class GuideProfileController extends Controller
         $guides->save();
 
         //return redirect('/guidepage')->with('guides', $guides);
-        return redirect()->back()->with('message','Account Update Successfully');
+        return redirect()->back()->with('message', 'Account Update Successfully');
     }
     public function delete($id)
     {

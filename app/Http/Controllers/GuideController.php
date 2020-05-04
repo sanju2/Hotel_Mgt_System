@@ -1,17 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Guide;
 use Illuminate\Http\Request;
 
 class GuideController extends Controller
 {
-    public function index(){
-        return view('guide_signup');
+    public function index()
+    {
+        return view('guide.guide_signup');
     }
-    public function store(Request $request){
+    public function store(Request $request)
+    {
 
-        
+
         $this->validate($request, [
             'fname' => 'required',
             'lname' => 'required',
@@ -38,31 +41,30 @@ class GuideController extends Controller
         $file->storeAs('public', $filename);
 
         $guide->image = $filename; */
-            
 
-        	$guide -> first_name =    $request -> fname;
-            $guide -> last_name =   $request->lname;
-            $guide -> dob =   $request->dob;
-            $guide -> gender =  $request->gender;
-            $guide -> guidequalifications = $request->qualifi;
-            $guide -> nic = $request->nic;
-            $guide -> mobileno = $request->mobileno;
-            $guide -> email =  $request->email;
-            $guide -> username = $request->username;
-            $guide -> password =  $request->password;
-            $guide -> conpassword =    $request->conpassword;
-           
 
-            if ($request->hasfile('image')) {
-                $file = $request->file('image');
-                $extension = $file->getClientOriginalExtension(); //get image
-                $filename = time() . '.' . $extension;
-                $file->move('uploads/guide/', $filename);
-                $guide->image = $filename;
-            }
+        $guide->first_name =    $request->fname;
+        $guide->last_name =   $request->lname;
+        $guide->dob =   $request->dob;
+        $guide->gender =  $request->gender;
+        $guide->guidequalifications = $request->qualifi;
+        $guide->nic = $request->nic;
+        $guide->mobileno = $request->mobileno;
+        $guide->email =  $request->email;
+        $guide->username = $request->username;
+        $guide->password =  $request->password;
+        $guide->conpassword =    $request->conpassword;
 
-            $guide -> save();
-            return redirect()->back()->with('message','Register Success');
+
+        if ($request->hasfile('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension(); //get image
+            $filename = time() . '.' . $extension;
+            $file->move('uploads/guide/', $filename);
+            $guide->image = $filename;
+        }
+
+        $guide->save();
+        return redirect()->back()->with('message', 'Register Success');
     }
-    
 }

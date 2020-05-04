@@ -5,8 +5,7 @@
     @extends('layouts.head')
     @section('title' , "Employee Page")
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+
     <style>
         #result {
             position: absolute;
@@ -40,6 +39,60 @@
         </div>
         <ul class="list-group" id="result"></ul>
         <br />
+    </div>
+    <center>
+        <h3> Staff-Members </h3>
+    </center>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <img src="img/um.png" alt="Sudharaka" style="width:50%">
+                <div class="container">
+                    <h2>Mr.Tharindu Jayasignha</h2>
+                    <p class="title">CEO & Founder</p>
+                    <p>CEO @ Founder of the Green Mount Hotel</p>
+                    <p>tharindu@gmail.com</p>
+                    <p><button class="btn btn-primary">Contact</button></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="img/um.png" alt="Asitha" style="width:50%">
+                <div class="container">
+                    <h2>Mr.Lasantha Sanjeewa</h2>
+                    <p class="title">Financial Manager</p>
+                    <p>Financial Manager of the Green Mount Hotel</p>
+                    <p>lsanjeewa947@gmail.com</p>
+                    <p><button class="btn btn-primary">Contact</button></p>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <img src="img/uf.jpg" alt="Vishal" style="width:50%">
+                <div class="container">
+                    <h2>Mrs.Navodya Sathsarani</h2>
+                    <p class="title">HR Manager</p>
+                    <p>HR Manager of the Green Mount Hotel</p>
+                    <p>navodyasath@gmail.com</p>
+                    <p><button class="btn btn-primary">Contact</button></p>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <img src="img/uf.jpg" alt="Vishal" style="width:50%">
+                <div class="container">
+                    <h2>Mrs.Pavithra Piyumi</h2>
+                    <p class="title">Main Chef</p>
+                    <p>Main Chef of Green Mount Hotel</p>
+                    <p>pavithpiyumi@gmail.com</p>
+                    <p><button class="btn btn-primary">Contact</button></p>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 

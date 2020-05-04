@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Book;
 use Illuminate\Http\Request;
 
@@ -13,27 +14,23 @@ class BookController extends Controller
     }
     public function store(Request $request)
     {
-        //validation part
-        $data = request()->validate([
-            'name' => 'required|min:3',
-            'phoneno' => 'required|max:10',
-            'place' => 'required|max:50|min:5',
-            'dates' => 'required|max:10',
-        ]); 
+
 
         $book = new Book();
 
         $book->name =    $request->name;
 
-        $book->phoneno =  $request->pno;
+        $book->phone =  $request->phone;
+        $book->email =  $request->email;
         $book->place = $request->place;
         $book->dates = $request->dates;
+        $book->guide = $request->guide;
 
 
 
 
         $book->save();
         return redirect('/pay');
-        return redirect()->back()->with('message','Booking Successfully');
+        return redirect()->back()->with('message', 'Booking Successfully');
     }
 }

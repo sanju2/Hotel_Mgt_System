@@ -15,7 +15,6 @@ class ViewController extends Controller
     public function index()
     {
         $users = DB::select('select * from guides');
-        return view('guidedash', ['users' => $users]);
+        return view('guide.guidedash', ['users' => $users]);
     }
-   
 }

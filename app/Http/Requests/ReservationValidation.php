@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ReservationValidation extends FormRequest
+class TReservationValidation extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,11 +27,11 @@ class ReservationValidation extends FormRequest
             'fname' => 'required|string|max:20|alpha',
             'lname' => 'required|string|max:20|alpha',
             'phone' => 'required|numeric|phone_number|digits:10',
-            'rtype' => 'exists:room_types,id',
+            'rtype' => 'exists:tour_types,id',
             'cin' => 'required|after_or_equal:today',
             'cout' => 'required|after:cin',
 
-            'r_no' => 'exists:rooms,id'
+            't_no' => 'exists:tours,id'
         ];
     }
 
@@ -53,7 +53,7 @@ class ReservationValidation extends FormRequest
             'phone.phone_number' => 'ERROR: Invalid phone number format!',
             'phone.digits' => 'ERROR: Phone number should have only 10 digits!',
 
-            'rtype.exists' => 'ERROR: Selected room type does not exist!',
+            'ttype.exists' => 'ERROR: Selected tour type does not exist!',
 
             'cin.required' => 'ERROR: Check in field is required!',
             'cin.after_or_equal' => 'ERROR: Check in date must be today or a date after today!',
@@ -61,7 +61,7 @@ class ReservationValidation extends FormRequest
             'cout.required' => 'ERROR: Check out field is required!',
             'cout.after' => 'ERROR: Check out date must be a date after check in date!',
 
-            'r_no.exists' => 'ERROR: Selected room does not exist!'
+            't_no.exists' => 'ERROR: Selected tour does not exist!'
         ];
     }
 }

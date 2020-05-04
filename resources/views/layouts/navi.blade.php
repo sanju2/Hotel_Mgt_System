@@ -17,9 +17,6 @@
             <a class="nav-link" href="/gallery">Our Galley</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/glog">Guides Login</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="/emp">Our Staff</a>
           </li>
           <li class="nav-item">
