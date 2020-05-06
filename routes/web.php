@@ -123,8 +123,6 @@ Route::get('/mail', 'BookingDController@index');
 //cancel booking
 Route::get('delete/{id}', 'BookingDController@destroy');
 
-
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //gasa routes
 Route::get('/news', function () {
