@@ -8,7 +8,8 @@ use App\Reservation;
 use App\User;
 
 
-//lasantha sanju routes
+//lasantha sanjeewa routes........................................................
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -123,178 +124,14 @@ Route::get('/mail', 'BookingDController@index');
 //cancel booking
 Route::get('delete/{id}', 'BookingDController@destroy');
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-//gasa routes
-Route::get('/news', function () {
-    $data = App\newss::all();
-    return view('news')->with('news', $data);
+
+//sinidu routes--------------------------------------------------------------------------
+//booking routes
+Route::get('/book', function () {
+    return view('booking');
 });
-
-Route::get('/deletenews/{id}', 'NewController@deletenews');
-Route::get('/updatenews/{id}', 'NewController@updatenewsview');
-Route::post('/updatenewss', 'NewController@updatenews');
-
-
-Route::post('/news', 'NewController@saved')->name('addnews');
-
-Route::get('/newspage', 'NewController@display');
-
-/////////navodya routes
-
-
-Route::get('/master', function () {
-    return view('master');
-});
-
-
-
-
-
-
-
-
-
-
-
-Route::resource('product', 'itemController');
-
-
-
-Route::get('/food', function () {
-    return view('food');
-});
-
-Route::get('/food', 'itemController@foodview');
-
-
-
-
-Route::get('/viewfood', function () {
-    return view('viewfood');
-});
-
-
-
-
-
-Route::post('/saveCategory', 'categoryController@store')->name('saveCategory');
-
-
-Route::post('/saveItem', 'itemController@itemstore')->name('saveItem');
-
-Route::get('/viewfood', 'itemController@display');
-Route::get('/food/delete/{food}', 'itemController@destroy');
-
-
-
-
-
-
-
-
-Route::get('/editimage/{id}', 'itemController@edit');
-
-Route::post('/editimage/{id}', 'itemController@update');
-
-
-Route::get('/customerview1', function () {
-    return view('customerview1');
-});
-
-Route::get('/item', [
-    'uses' => 'itemController@getIndex',
-    'as' => 'product.index'
-]);
-Route::get('/items/fetch_data', 'ItemfilterController@fetch_data')->name('membersfrontdata');
-Route::get('item/{cat}', 'itemController@proCat');
-
-
-Route::get('/add-to-cart/{id}', [
-    'uses' => 'itemController@getAddToCart',
-    'as' => 'product.AddToCart'
-
-
-]);
-Route::get('/shopping-cart', [
-    'uses' => 'itemController@getCart',
-    'as' => 'product.shoppingCart'
-
-
-]);
-
-
-Route::get('/checkout', [
-    'uses' => 'itemController@getCheckout',
-    'as' => 'checkout'
-
-
-]);
-
-Route::post('/checkout', [
-    'uses' => 'itemController@postCheckout',
-    'as' => 'checkout'
-
-
-]);
-
-
-
-
-
-
-Route::get('/paymentnew', function () {
-    return view('paymentnew');
-});
-
-
-Route::get('/payment', function () {
-    return view('payment');
-});
-
-
-
-
-
-
-Route::post('/paycheck', [
-    'uses' => 'MyStripeController@pay',
-    'as' => 'paycheck'
-
-
-
-]);
-
-Route::view('addCategory', 'admin.addCategory');
-
-Route::view('cats', 'admin.cats', [
-    'data' => App\cats::all()
-
-]);
-
-Route::post('saveCategory', 'itemController@saveCategory')->name('saveCategory');
-
-
-Route::get('test', function () {
-    return App\fooditem::with('cats')->get();
-});
-
-
-
-//products by ajax with cat id
-Route::get('productsCat', 'itemController@productsCat');
-
-Route::get('/foodorders', 'itemController@displayorder');
-
-
-// Route::get('/sms', function () {
-//     return view('sms');
-// });
-
-Route::post('foodorders', 'itemController@sendSms');
-
-
-///sinidu routes---------------------------------------------
-
+Route::get("booking", 'BookController@index');
+Route::post("/book", 'BookController@store');
 
 Route::get('/h', function () {
     return view('Green_Mount'); //home page accomadation
@@ -459,8 +296,147 @@ Route::get('/reservation/{customer_id}/{flag}', [
     'uses' => 'CustomerController@reservation'
 ]);
 
+//cancel room booking
+Route::get('/bookrcancel', 'bookingCancelController@index');
+Route::get('delete/{id}', 'bookingCancelController@destroy');
 
-// tharindu jayasighe HR Management
+//navodya routes............................................
+
+
+Route::get('/master', function () {
+    return view('master');
+});
+
+
+Route::resource('product', 'itemController');
+
+
+Route::get('/food', function () {
+    return view('food');
+});
+
+Route::get('/food', 'itemController@foodview');
+
+
+Route::get('/viewfood', function () {
+    return view('viewfood');
+});
+
+
+Route::post('/saveCategory', 'categoryController@store')->name('saveCategory');
+
+
+Route::post('/saveItem', 'itemController@itemstore')->name('saveItem');
+
+Route::get('/viewfood', 'itemController@display');
+Route::get('/food/delete/{food}', 'itemController@destroy');
+
+
+Route::get('/editimage/{id}', 'itemController@edit');
+
+Route::post('/editimage/{id}', 'itemController@update');
+
+
+Route::get('/customerview1', function () {
+    return view('customerview1');
+});
+
+Route::get('/item', [
+    'uses' => 'itemController@getIndex',
+    'as' => 'product.index'
+]);
+Route::get('/items/fetch_data', 'ItemfilterController@fetch_data')->name('membersfrontdata');
+Route::get('item/{cat}', 'itemController@proCat');
+
+
+Route::get('/add-to-cart/{id}', [
+    'uses' => 'itemController@getAddToCart',
+    'as' => 'product.AddToCart'
+
+
+]);
+Route::get('/shopping-cart', [
+    'uses' => 'itemController@getCart',
+    'as' => 'product.shoppingCart'
+
+
+]);
+
+
+Route::get('/checkout', [
+    'uses' => 'itemController@getCheckout',
+    'as' => 'checkout'
+
+
+]);
+
+Route::post('/checkout', [
+    'uses' => 'itemController@postCheckout',
+    'as' => 'checkout'
+
+
+]);
+
+
+
+
+
+
+Route::get('/paymentnew', function () {
+    return view('paymentnew');
+});
+
+
+Route::get('/payment', function () {
+    return view('payment');
+});
+
+
+
+
+
+
+Route::post('/paycheck', [
+    'uses' => 'MyStripeController@pay',
+    'as' => 'paycheck'
+
+
+
+]);
+
+Route::view('addCategory', 'admin.addCategory');
+
+Route::view('cats', 'admin.cats', [
+    'data' => App\cats::all()
+
+]);
+
+Route::post('saveCategory', 'itemController@saveCategory')->name('saveCategory');
+
+
+Route::get('test', function () {
+    return App\fooditem::with('cats')->get();
+});
+
+
+
+//products by ajax with cat id
+Route::get('productsCat', 'itemController@productsCat');
+
+Route::get('/foodorders', 'itemController@displayorder');
+
+
+// Route::get('/sms', function () {
+//     return view('sms');
+// });
+
+Route::post('foodorders', 'itemController@sendSms');
+
+
+
+
+
+// tharindu jayasighe........................................................
 
 
 Route::get('/Eadd', function () {
@@ -643,7 +619,19 @@ Route::get('/dessalary/{id}', 'salaryController@getDatadelete');
 
 //Route::get('/sss' ,'EmployeeChartController@salaryR');
 
+Route::get('/news', function () {
+    $data = App\newss::all();
+    return view('news')->with('news', $data);
+});
 
+Route::get('/deletenews/{id}', 'NewController@deletenews');
+Route::get('/updatenews/{id}', 'NewController@updatenewsview');
+Route::post('/updatenewss', 'NewController@updatenews');
+
+
+Route::post('/news', 'NewController@saved')->name('addnews');
+
+Route::get('/newspage', 'NewController@display');
 
 
 

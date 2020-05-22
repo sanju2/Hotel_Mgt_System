@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2020 at 10:06 PM
+-- Generation Time: May 22, 2020 at 03:59 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -93,7 +93,9 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `name`, `phone`, `email`, `place`, `dates`, `created_at`, `updated_at`, `guide`) VALUES
-(11, 'TestBookig', '0775094902', 'lsanjeewa947@gmail.com', 'ambalangoda', '2', '2020-05-04 14:29:29', '2020-05-04 14:29:29', 'Yes');
+(11, 'TestBookig', '0775094902', 'lsanjeewa947@gmail.com', 'ambalangoda', '2', '2020-05-04 14:29:29', '2020-05-04 14:29:29', 'Yes'),
+(12, 'lasantha', '678754753655', 'testuser@gmail.com', 'fsdfdsf', '3', '2020-05-19 02:51:11', '2020-05-19 02:51:11', 'Yes'),
+(13, 'nethmi', '0773136537', 'kawyanethmi9@gmail.com', 'galle', '4', '2020-05-19 08:50:47', '2020-05-19 08:50:47', 'No');
 
 -- --------------------------------------------------------
 
@@ -149,6 +151,15 @@ CREATE TABLE `customers` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `customers`
+--
+
+INSERT INTO `customers` (`id`, `fname`, `lname`, `nic`, `email`, `phone`, `address`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'lasantha', 'sanjeewa', NULL, NULL, '0775094902', NULL, '2020-05-19 03:14:07', '2020-05-19 03:14:07', NULL),
+(2, 'lasantha', 'sanjeewa', NULL, NULL, '0775094902', NULL, '2020-05-19 03:31:42', '2020-05-19 03:31:42', NULL),
+(3, 'lasantha', 'sanjeewa', NULL, NULL, '0775094902', NULL, '2020-05-19 08:55:12', '2020-05-19 08:55:12', NULL);
 
 -- --------------------------------------------------------
 
@@ -382,7 +393,7 @@ CREATE TABLE `guides` (
 --
 
 INSERT INTO `guides` (`id`, `first_name`, `last_name`, `dob`, `gender`, `guidequalifications`, `nic`, `mobileno`, `email`, `username`, `password`, `conpassword`, `image`, `created_at`, `updated_at`) VALUES
-(11, 'test', 'guide', '1996-07-01', 'Male', 'Undergraduate at UWU', '961832322v', '0775094902', 'lsanjeewa947@gmail.com', 'sanju2', '123456', '123456', '1588176736.jpg', '2020-04-29 10:42:16', '2020-04-29 10:42:16');
+(11, 'test', 'guide', '1996-07-01', 'Male', 'Undergraduate at UWU', '961832322v', '0775094902', 'lsanjeewa947@gmail.com', 'testguide', '123456', '123456', '1588176736.jpg', '2020-04-29 10:42:16', '2020-04-29 10:42:16');
 
 -- --------------------------------------------------------
 
@@ -631,6 +642,14 @@ CREATE TABLE `rooms` (
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `rooms`
+--
+
+INSERT INTO `rooms` (`id`, `floor`, `availability`, `status`, `description`, `t_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 1, 1, 1, 'Good condition', 1, '2020-05-19 02:56:54', '2020-05-19 02:56:54', NULL),
+(2, 1, 1, 1, 'double ac rom', 2, '2020-05-19 02:57:07', '2020-05-19 02:57:07', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -648,6 +667,14 @@ CREATE TABLE `room_types` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `room_types`
+--
+
+INSERT INTO `room_types` (`id`, `name`, `total`, `available`, `description`, `base_price`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Simgle', 0, 0, 'single rom', 10000, '2020-05-19 02:56:18', '2020-05-19 02:56:18', NULL),
+(2, 'Double', 0, 0, 'Doouble room', 20000, '2020-05-19 02:56:35', '2020-05-19 02:56:35', NULL);
 
 -- --------------------------------------------------------
 
@@ -734,9 +761,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(3, 'testuser', 'testuser@gmail.com', NULL, '$2y$10$YanUeeuZGl2jISk.K9Yxm.VmQblTlIX4AgFF6mLI4ceTMvn7WNaOG', NULL, '2020-04-28 03:13:39', '2020-04-28 03:13:39'),
-(4, 'lasantha', 'lsanjeewa947@gmail.com', NULL, '$2y$10$GEVMGwG9gXV4fdVLkprYvuVAVdbAx1Y8GRkViiGyeYiNwJxJvvy1.', NULL, '2020-04-28 03:19:48', '2020-04-28 03:19:48'),
-(5, 'gret', 'greenmount049@gmail.com', NULL, '$2y$10$ts.ZnQqEtRXOTYY8YWPj../o571DWRaa/parHq0UXhP4Ej99Ui/1G', NULL, '2020-04-28 03:22:45', '2020-04-28 03:22:45');
+(3, 'testuser', 'testuser@gmail.com', NULL, '$2y$10$YanUeeuZGl2jISk.K9Yxm.VmQblTlIX4AgFF6mLI4ceTMvn7WNaOG', NULL, '2020-04-28 03:13:39', '2020-04-28 03:13:39');
 
 --
 -- Indexes for dumped tables
@@ -964,7 +989,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -982,7 +1007,7 @@ ALTER TABLE `cats`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `employees`
@@ -1072,13 +1097,13 @@ ALTER TABLE `requested_leaves`
 -- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `reserves`
 --
 ALTER TABLE `reserves`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `treserves`

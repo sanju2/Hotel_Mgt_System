@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use validator;
 
 class StoreBlogPost extends FormRequest
 {
@@ -24,7 +25,20 @@ class StoreBlogPost extends FormRequest
     public function rules()
     {
         return [
-            //
+            'ID' => 'numeric',
+            'leve_type' => 'unique:leave_types,leve_type|alpha',
+            'days' => 'numeric',
+            'Date' => 'date_format:Y-m-d',
+            '#days' => 'numeric',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+
+            '#days.numeric' => 'please enter numrtic method only',
+
         ];
     }
 }
