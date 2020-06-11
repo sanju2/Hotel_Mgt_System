@@ -47,7 +47,7 @@ class CustomerController extends Controller
        $user->contact = $request['contact'];
        $user->email = $request['email'];
        $user->save();
-       return view('customer.book');
+       return view('payroom');
         $id = $user->id;
        $find = Customer::find($id);
        $reserve = new Reservation;
@@ -72,12 +72,28 @@ class CustomerController extends Controller
       //   $message->to($data['email'])->subject('Hi'.$data['name']);
       //  });
 
-       return redirect()->route('reservation', ['customer_id'=> $reserve->customer_id, 'flag'=> $reserve->flag]);
+      // return redirect()->route('reservation', ['customer_id'=> $reserve->customer_id, 'flag'=> $reserve->flag]);
     
-    }
-    public function reservation($customer_id, $flag){
-      $reservation = Reservation::where('customer_id', $customer_id)->where('flag', $flag)->first();
-      return view('customer.reservation', compact('reservation'));
-    }
+     }
+    // public function reservation($customer_id, $flag){
+    //   $reservation = Reservation::where('customer_id', $customer_id)->where('flag', $flag)->first();
+    //   return view('customer.reservation', compact('reservation'));
+    // }
+
+
+    // public function getCheckout(){
+    //     if(!Session::has('cart')){
+     
+     
+    //  return view('shop.shopping-cart');
+     
+    //     }
+     
+    //  $oldCart=Session::get('cart');
+    //  $cart=new Cart($oldCart);
+    //  $total=$cart->totalPrice;
+    //  return view('checkout1',['total'=>$total]);
+    //  }
+     
    
 }

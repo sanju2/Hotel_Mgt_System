@@ -65,9 +65,9 @@ Route::post('/', function (Request $request) {
     try {
         \Stripe\Charge::create(array(
             "amount" => 300 * 100,
-            "currency" => "usd",
+            "currency" => "lkr",
             "source" => $request->input('stripeToken'), // obtained with Stripe.js
-            "description" => "Test payment."
+            "description" => "Green Tel Payment"
         ));
         Session::flash('success-message', 'Payment done successfully !');
         return Redirect::back();
@@ -77,7 +77,7 @@ Route::post('/', function (Request $request) {
     }
 });
 
-//guide profile update 
+//guide profile update
 
 Route::get('/guidepage', 'GuideProfileController@display');
 
@@ -116,6 +116,7 @@ Route::get('view-records', 'TourViewController@index');
 Route::get('/mail', function () {
     return view('mailview');
 });
+
 Route::post('/mail', 'MyMailController@sendMail');
 
 //booking deatisl retriew
@@ -123,6 +124,37 @@ Route::get('/mail', 'BookingDController@index');
 
 //cancel booking
 Route::get('delete/{id}', 'BookingDController@destroy');
+
+//Tour details page
+Route::get('/TP', function () {
+    return view('TourP');
+});
+
+//customer password change
+Route::get('change-password', 'ChangePasswordController@index');
+Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
+
+//pdf generate
+Route::get('generate-pdf', 'PdfController@generatePDF');
+
+//retrive data
+Route::get('view-records', 'TourViewController@index');
+
+//Mail Sending guide
+Route::get('/mail2', function () {
+    return view('mailview2');
+});
+
+Route::post('/mail2', 'MyMailController@sendMail2');
+
+//booking deatisl retriew2/////////////////////////////////////
+Route::get('/bcancel', 'BookingDController2@view');
+
+//cancel booking2
+Route::get('deletee/{id}', 'BookingDController2@destroy2');
+
+//cancel booking details
+Route::post("canceltbook", 'TCancelController@store');
 
 
 //sinidu routes--------------------------------------------------------------------------
@@ -132,6 +164,21 @@ Route::get('/book', function () {
 });
 Route::get("booking", 'BookController@index');
 Route::post("/book", 'BookController@store');
+
+Route::get('/payroom', function () {
+    return view('payroom');
+});
+
+Route::get('/booksuccess', function () {
+    return view('booksuccess');
+});
+
+//cancel mail
+Route::get('/mailroom', function () {
+    return view('mailroom');
+});
+
+
 
 Route::get('/h', function () {
     return view('Green_Mount'); //home page accomadation
@@ -253,6 +300,13 @@ Route::post('/book/request', [
     'as' => 'request',
     'uses' => 'CustomerController@request'
 ]);
+
+// Route::post('/book/checkout', [
+//     'as' => 'checkout1',
+//     'uses' => 'CustomerController@getCheckout'
+// ]);
+
+
 Route::get('/login', [
     'as' => 'login',
     'uses' => 'AuthController@login'
@@ -295,10 +349,6 @@ Route::get('/reservation/{customer_id}/{flag}', [
     'as' => 'reservation',
     'uses' => 'CustomerController@reservation'
 ]);
-
-//cancel room booking
-Route::get('/bookrcancel', 'bookingCancelController@index');
-Route::get('delete/{id}', 'bookingCancelController@destroy');
 
 //navodya routes............................................
 
@@ -367,7 +417,6 @@ Route::get('/checkout', [
     'uses' => 'itemController@getCheckout',
     'as' => 'checkout'
 
-
 ]);
 
 Route::post('/checkout', [
@@ -377,24 +426,13 @@ Route::post('/checkout', [
 
 ]);
 
-
-
-
-
-
 Route::get('/paymentnew', function () {
     return view('paymentnew');
 });
 
-
 Route::get('/payment', function () {
     return view('payment');
 });
-
-
-
-
-
 
 Route::post('/paycheck', [
     'uses' => 'MyStripeController@pay',
@@ -425,12 +463,13 @@ Route::get('productsCat', 'itemController@productsCat');
 
 Route::get('/foodorders', 'itemController@displayorder');
 
+Route::post('foodorders', 'itemController@sendSms');
 
 // Route::get('/sms', function () {
 //     return view('sms');
 // });
 
-Route::post('foodorders', 'itemController@sendSms');
+
 
 
 

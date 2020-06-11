@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     `@extends('layouts.head')
-    @section('title' , "Home Page")
+    @section('title' , "Email Send Page")
 
     <style>
         html,
@@ -45,14 +45,24 @@
     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="/index">Green Mount Hotel</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index">Green Mount Hotel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin">Back</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
     </nav>
     <br />
     <br />
     <br />
+
+
     <center>
         <b>
             <p>Booking Deatils</p>
@@ -82,6 +92,30 @@
             <td>{{ $user->dates }}</td>
             <td>{{ $user->guide }}</td>
             <td><a href='delete/{{ $user->id }}' class="text-primary">Cancel Tour</a></td>
+        </tr>
+        @endforeach
+    </table>
+
+    <br />
+    <br />
+
+    <center>
+        <b>
+            <p>Tour Booking Cancel Details</p>
+        </b>
+    </center>
+    <table border="1" class="table table-dark" align="left">
+        <tr>
+            <td>Id</td>
+            <td>Reason</td>
+            <td>phone</td>
+        </tr>
+        @foreach ($tourr as $tour)
+        <tr>
+            <td>{{ $tour->id }}</td>
+            <td>{{ $tour->to }}</td>
+            <td>{{ $tour->phone }}</td>
+
         </tr>
         @endforeach
     </table>
@@ -129,7 +163,7 @@
             <input class="form-control" name="email" type="email" placeholder="Enter Email Address">
             <input class="form-control" name="subject" type="text" placeholder="Enter Emai Subject">
             <textarea class="form-control" name="content" placeholder="Email details"></textarea>
-            <button class="btn btn-secondary">SEND</button>
+            <button class="btn btn-success">SEND</button>
         </div>
     </form>
 

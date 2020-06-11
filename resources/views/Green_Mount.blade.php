@@ -186,7 +186,7 @@
                 <div class="price-block agile">
                     <div class="price-gd-top">
                         <img src="{{ asset('images/r1.jpg') }}" alt="single" class="img-responsive"/>
-                        <h4>Single Bedroom</h4>
+                        <h4>Suite Room</h4>
                     </div>
 
                     <div class="price-gd-bottom">
@@ -201,8 +201,8 @@
                         </div>
 
                         <div class="price-selet">
-                            <h3><span>LKR</span>2000</h3>
-                            <a href="{{ url('/online_reservation') }}">Book Now</a>
+                            <h3><span>LKR</span>3000</h3>
+                            <a href="{{ url('/book') }}">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -212,7 +212,7 @@
                 <div class="price-block agile">
                     <div class="price-gd-top">
                         <img src="{{ asset('images/r2.jpg') }}" alt="double" class="img-responsive"/>
-                        <h4>Double Bedroom</h4>
+                        <h4>Dulex Room</h4>
                     </div>
 
                     <div class="price-gd-bottom">
@@ -227,8 +227,8 @@
                         </div>
 
                         <div class="price-selet">
-                            <h3><span>LKR</span>4000</h3>
-                            <a href="{{ url('/online_reservation') }}">Book Now</a>
+                            <h3><span>LKR</span>5000</h3>
+                            <a href="{{ url('/book') }}">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -238,7 +238,7 @@
                 <div class="price-block agile">
                     <div class="price-gd-top">
                         <img src="{{ asset('images/r3.jpg') }}" alt="family" class="img-responsive"/>
-                        <h4>Family Bedroom</h4>
+                        <h4>Standard Room</h4>
                     </div>
 
                     <div class="price-gd-bottom">
@@ -254,14 +254,14 @@
 
                         <div class="price-selet">
                             <h3><span>LKR</span>7500</h3>
-                            <a href="{{ url('/online_reservation') }}">Book Now</a>
+                            <a href="{{ url('/book') }}">Book Now</a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div id="book">
-                <a href="{{ url('/online_reservation') }}" class="myButton">BOOK NOW!</a>
+                <a href="{{ url('/book') }}" class="myButton">BOOK NOW!</a>
             </div>
 
             <div class="clearfix"></div>

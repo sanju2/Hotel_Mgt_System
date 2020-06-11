@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2020 at 03:59 PM
+-- Generation Time: May 26, 2020 at 02:16 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -157,9 +157,13 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `fname`, `lname`, `nic`, `email`, `phone`, `address`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'lasantha', 'sanjeewa', NULL, NULL, '0775094902', NULL, '2020-05-19 03:14:07', '2020-05-19 03:14:07', NULL),
-(2, 'lasantha', 'sanjeewa', NULL, NULL, '0775094902', NULL, '2020-05-19 03:31:42', '2020-05-19 03:31:42', NULL),
-(3, 'lasantha', 'sanjeewa', NULL, NULL, '0775094902', NULL, '2020-05-19 08:55:12', '2020-05-19 08:55:12', NULL);
+(1, 'lasantha', 'sanjeewa', NULL, NULL, '0775094902', NULL, '2020-05-18 21:44:07', '2020-05-18 21:44:07', NULL),
+(2, 'lasantha', 'sanjeewa', NULL, NULL, '0775094902', NULL, '2020-05-18 22:01:42', '2020-05-18 22:01:42', NULL),
+(3, 'lasantha', 'sanjeewa', NULL, NULL, '0775094902', NULL, '2020-05-19 03:25:12', '2020-05-19 03:25:12', NULL),
+(4, 'navodya', 'sathsarani', NULL, NULL, '0705608259', NULL, '2020-05-23 02:59:24', '2020-05-23 02:59:24', NULL),
+(5, 'navodya', 'sathsarani', NULL, NULL, '0710747770', NULL, '2020-05-23 05:46:15', '2020-05-23 05:46:15', NULL),
+(6, 'navodya', 'sathsarani', NULL, NULL, '0710747770', NULL, '2020-05-23 05:46:25', '2020-05-23 05:46:25', NULL),
+(7, 'navodya', 'sathsarani', NULL, NULL, '0710747770', NULL, '2020-05-23 05:46:49', '2020-05-23 05:46:49', NULL);
 
 -- --------------------------------------------------------
 
@@ -348,6 +352,29 @@ CREATE TABLE `fooditems` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `fooditems`
+--
+
+INSERT INTO `fooditems` (`id`, `itemname`, `price`, `calorie`, `image`, `cat_id`, `description`, `created_at`, `updated_at`) VALUES
+(1, 'choco_love_rose_cake', '1200', '1500cl', 'choco_love_rose_cake.jfif', '1', 'choco love rose cake....Specially for your loved once', '2020-05-22 03:06:29', '2020-05-23 08:11:42'),
+(2, 'divine_cake', '1000', '1200cl', 'divine_cake.jfif', '1', 'Divine cake with cherries', '2020-05-22 03:08:38', '2020-05-22 03:08:38'),
+(3, 'happy_birthday', '1700', '2000cl', 'happy_birthday.jfif', '1', 'For your loved ones birthday', '2020-05-22 03:09:24', '2020-05-22 03:09:24'),
+(4, 'pineapple_cake', '1500', '1700cl', 'pineapple_cake1.jpg', '1', 'Made using fresh pineapples', '2020-05-22 03:10:40', '2020-05-22 03:10:40'),
+(5, 'chocolate_and_mint_cake_jar', '500', '1000cl', 'chocolate_and_mint_cake_jar.jpg', '2', 'Chocolate and mint taste added for this cake...only from our hotel in badulla', '2020-05-22 03:11:45', '2020-05-22 03:11:45'),
+(6, 'creme_brulee', '600', '1100cl', 'creme_brulee.jfif', '2', 'cremee cake.....newly introduce one', '2020-05-22 03:12:23', '2020-05-22 03:12:23'),
+(7, 'No_bake_cheese_cake', '800', '1000cl', 'No_bake_cheese_cake.jfif', '2', 'No bake cheese cake...From a special recipe', '2020-05-22 03:13:20', '2020-05-22 03:13:20'),
+(8, 'pancake', '400', '500cl', 'pancake.jfif', '2', 'Pancakes different from other\'s ones', '2020-05-22 03:13:55', '2020-05-22 03:13:55'),
+(9, 'Red_velvet_cake', '800', '1000cl', 'Red_velvet_cake.jfif', '2', 'Red velvet tasty dessert', '2020-05-22 03:14:29', '2020-05-22 03:14:29'),
+(10, 'cheese_burger', '500', '700cl', 'cheese_burger.jfif', '3', 'Cheese burger.....', '2020-05-22 03:15:30', '2020-05-22 03:15:30'),
+(11, 'Hamburger', '500', '700cl', 'hamburger.jfif', '3', 'Hamburger....', '2020-05-22 03:16:07', '2020-05-22 03:16:07'),
+(12, 'smash_burger', '700', '800cl', 'smash_burger.jfif', '3', 'Smash burger....', '2020-05-22 03:16:49', '2020-05-22 03:16:49'),
+(13, 'vegan_burger', '300', '500cl', 'vegan_burger.jfif', '3', 'For vegetarians', '2020-05-22 03:17:22', '2020-05-22 03:17:22'),
+(14, 'can pepci', '150', '200cl', 'can-pepsi.png', '4', 'One bottle is enough for one person.', '2020-05-22 03:18:13', '2020-05-22 03:18:13'),
+(15, 'Coke', '350', '500cl', 'cock.jfif', '4', 'You can get 10% off from our special offer in this week', '2020-05-22 03:19:11', '2020-05-22 03:19:11'),
+(16, 'Sprite', '400', '550cl', 'sprite.jfif', '4', 'One bottle enough for one person at a time.Energized drink.', '2020-05-22 03:19:40', '2020-05-22 03:19:40'),
+(18, 'Fanta', '400', '500cl', 'fanta.jpeg', '4', 'Fanta has 10% offer in this week', '2020-05-22 03:22:17', '2020-05-22 03:22:17');
+
 -- --------------------------------------------------------
 
 --
@@ -363,6 +390,13 @@ CREATE TABLE `foodorders` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `foodorders`
+--
+
+INSERT INTO `foodorders` (`id`, `Name`, `Address`, `orders`, `phoneNumber`, `created_at`, `updated_at`) VALUES
+(1, 'Navodya', 'kurunegala', 'pancake 1, Coke 1', '710747770', '2020-05-06 09:11:31', '2020-05-06 09:11:31');
 
 -- --------------------------------------------------------
 
@@ -623,6 +657,13 @@ CREATE TABLE `reserves` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `reserves`
+--
+
+INSERT INTO `reserves` (`id`, `cid`, `room_no`, `t_id`, `resereved_date_time`, `check_in`, `check_out`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(4, 4, 4, 1, '2020-05-23 13:59:24', '2020-05-26', '2020-05-31', '2020-05-23 08:29:24', '2020-05-23 08:29:24', NULL);
 
 -- --------------------------------------------------------
 
@@ -1007,7 +1048,7 @@ ALTER TABLE `cats`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `employees`
@@ -1049,13 +1090,13 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT for table `fooditems`
 --
 ALTER TABLE `fooditems`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `foodorders`
 --
 ALTER TABLE `foodorders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `guides`
@@ -1103,7 +1144,7 @@ ALTER TABLE `reservations`
 -- AUTO_INCREMENT for table `reserves`
 --
 ALTER TABLE `reserves`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `treserves`
@@ -1120,14 +1161,6 @@ ALTER TABLE `users`
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `reserves`
---
-ALTER TABLE `reserves`
-  ADD CONSTRAINT `reserves_cid_foreign` FOREIGN KEY (`cid`) REFERENCES `customers` (`id`),
-  ADD CONSTRAINT `reserves_room_no_foreign` FOREIGN KEY (`room_no`) REFERENCES `rooms` (`id`),
-  ADD CONSTRAINT `reserves_t_id_foreign` FOREIGN KEY (`t_id`) REFERENCES `room_types` (`id`);
 
 --
 -- Constraints for table `rooms`

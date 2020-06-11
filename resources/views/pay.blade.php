@@ -2,14 +2,12 @@
 
 <head>
 
-	@extends('layouts.head')
-	@section('title' , "Pay Page")
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	<style>
 		body {
-			background-image: url("{{asset('images/email_send.jpg')}}");
+			background-color: #99ccff;
 			background-size: cover;
 			height: 100%;
 		}
@@ -17,22 +15,12 @@
 </head>
 
 <body>
-	<!-- Navigation bar -->
-	<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-		<div class="container">
-			<a class="navbar-brand" href="/index">Green Mount Hotel</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-		</div>
-	</nav>
-	<br />
-	<br />
-	<br />
+
 	<br />
 	<br />
 	<br />
 	<div class="container">
+		<h1>Do Your Payments</h1>
 		<div class='row'>
 			<div class='col-md-4'></div>
 			<div class='col-md-4'>
@@ -60,16 +48,18 @@
 							<label class='control-label'> </label> <input class='form-control card-expiry-year' placeholder='YYYY' size='4' type='text'>
 						</div>
 					</div>
+
 					<div class='form-row'>
-						<div class='col-md-12'>
-							<div class='form-control total btn btn-info'>
-								Total: <span class='amount'>LKR300</span>
-							</div>
+						<div class='col-xs-12 form-group card required'>
+							Total: <span class='amount'> <input></span>
 						</div>
+
 					</div>
+
 					<div class='form-row'>
 						<div class='col-md-12 form-group'>
-							<button class='form-control btn btn-primary submit-button' type='submit' style="margin-top: 10px;">Pay »</button>
+							<button class='form-control btn btn-primary submit-button' type='submit' style="margin-top: 10px;">Pay</button>
+							<a href="/bookss" class="form-control btn btn-warning submit-button" role="button" style="margin-top: 10px;">Back</a>
 						</div>
 					</div>
 					<div class='form-row'>

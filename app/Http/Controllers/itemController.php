@@ -4,14 +4,18 @@ namespace App\Http\Controllers;
 use App\Cart;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Nexmo\Laravel\Facade\Nexmo;
 use App\fooditem;
 use App\cats;
 use Illuminate\Support\Facades\DB;
-use Session;
+//use Session;
 use Stripe\Charge;
 use Redirect,Response;
 use Stripe\Stripe;
 use App\foodOrders;
+
+
 
 
 
@@ -296,4 +300,18 @@ public function displayorder(){
     return view('foodorder')->with('foodorder',$foodorder);
 }
 
+
+
+public function sendSms(Request $request)
+    {
+        // return $request;
+        Nexmo::message()->send([
+            'to' => '94' . $request->mobile,
+            'from' => '16105552344',
+            'text' => 'Using the facade to send a message.'
+        ]);
+
+        Session::flash('success', 'Message sent');
+        return redirect('/foodorders');
+    }
 }

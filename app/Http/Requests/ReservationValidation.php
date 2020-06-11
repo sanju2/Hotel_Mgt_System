@@ -26,7 +26,7 @@ class ReservationValidation extends FormRequest
         return [
             'fname' => 'required|string|max:20|alpha',
             'lname' => 'required|string|max:20|alpha',
-            'phone' => 'required|numeric|phone_number|digits:10',
+            //'phone' => 'required|numeric|phone_number|digits:10',
             'rtype' => 'exists:room_types,id',
             'cin' => 'required|after_or_equal:today',
             'cout' => 'required|after:cin',
@@ -48,10 +48,10 @@ class ReservationValidation extends FormRequest
             'lname.required' => 'ERROR: Last name field is required!',
             'lname.max' => 'ERROR: Last name is too long. Limit to only 20 characters!',
 
-            'phone.numeric' => 'ERROR: Phone number must be numeric!',
-            'phone.required' => 'ERROR: Phone number field is required!',
-            'phone.phone_number' => 'ERROR: Invalid phone number format!',
-            'phone.digits' => 'ERROR: Phone number should have only 10 digits!',
+            // 'phone.numeric' => 'ERROR: Phone number must be numeric!',
+            // 'phone.required' => 'ERROR: Phone number field is required!',
+            // 'phone.phone_number' => 'ERROR: Invalid phone number format!',
+            // 'phone.digits' => 'ERROR: Phone number should have only 10 digits!',
 
             'rtype.exists' => 'ERROR: Selected room type does not exist!',
 

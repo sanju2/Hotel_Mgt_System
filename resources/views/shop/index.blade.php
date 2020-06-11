@@ -41,6 +41,9 @@
             <div class="caption">
                 <h3>{{$product->itemname}}</h3>
                 <p class="description">{{$product->description}}</p>
+
+
+                
                 <p class="calorie">{{$product->calorie}}</p>
                 <div class="clearfix">
                     <div class="pull-left price">Rs.{{$product->price}}</div>

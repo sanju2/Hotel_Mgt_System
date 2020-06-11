@@ -15,7 +15,8 @@ class BookingDController extends Controller
 
         $getbooksde = DB::table('books')->select('id', 'name', 'phone', 'email', 'place', 'dates', 'guide')->get();
         $getagentn = DB::table('guides')->select('id', 'first_name', 'last_name', 'nic', 'mobileno', 'email')->get();
-        return view('mailview')->with('getbooksde', $getbooksde)->with('getagentn', $getagentn);
+        $tourr = DB::table('canceltdetails')->select('id', 'to', 'phone')->get();
+        return view('mailview')->with('getbooksde', $getbooksde)->with('getagentn', $getagentn)->with('tourr', $tourr);
     }
     public function destroy($id)
     {

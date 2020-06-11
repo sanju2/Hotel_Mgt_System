@@ -89,7 +89,7 @@ body{
 	
 	
 		<div class="row well" id="content">
-			<form action="{{route('request')}}" method="POST">
+			<form action="{{route('checkout')}}" method="POST">
 	        <div class="col-md-2">
 				
 				<div class="form-group{{$errors->has('checkin') ? ' has-error' : ''}}" id="date">

@@ -5,28 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    @extends('layouts.head')
-    @section('title' , "Guide Details Update Page")
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
         body {
-            background-image: url("{{asset('images/guide_login.jpg')}}");
+            background-color: #33cccc;
             background-size: cover;
             height: 100%;
         }
     </style>
 </head>
-<!-- Navigation bar -->
-@extends('layouts.navi')
-<br /><br /><br /> <br />
+
 
 <body>
+
     <div class="container">
         <div class="jambotron"></div>
         <br>
         <h1>
             <font color="blue">You can update your profile</font>
+            <a href="/sglog" class="btn btn-warning" role="button">Back</a>
         </h1>
         <h3 class="text-center text-warning">{{ Session::get('message')}}</h3>
         <br>

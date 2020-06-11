@@ -27,13 +27,34 @@
                      
                         <tr>
                     
-                        <td>{{$foodorder->Name}}</td>
-                        <td>{{$foodorder->Address}}</td>
-                        <td>{{$foodorder->orders}}</td>
-                        <td>{{$foodorder->phoneNumber}}</td>
-                        <td><a href="#" class="btn btn-success">Send</a></td>
+                        <td>Navodya Sathsarani</td>
+                        <td>kurunegala</td>
+                        <td>pancake 1,Divine cake 1</td>
+
+                        <td>
+
+                        @if(Session::has('success'))
+                <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4 style="margin-bottom: 0;"><i class="icon fa fa-ban"></i> {{Session('success')}}</h4>
+                </div>
+            @endif
+
+            <form action="{{ url('foodorders') }}" method="post">
+                {{csrf_field()}}
+                <div class="form-group">
+                    
+                    <input type="text" name="mobile" class="form-control" id="mobile" placeholder="Mobile number">
+                </div>
+
+                <td>
+                <button type="submit" class="btn btn-primary">Send SMS</button>
+                </td>
+            </form>
                         
-                     
+            
+                        
+                        </td>
                         </tr>
                         
                         @endforeach

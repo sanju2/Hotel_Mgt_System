@@ -219,9 +219,6 @@
         </div>
     </div>
     <!--sign up section-->
-
-
-
     <div class="bg-circle-1 bg-circle"></div>
     <div class="bg-circle-2 bg-circle"></div>
     <div class="bg-circle-3 bg-circle"></div>
@@ -238,8 +235,9 @@
                 </div>
                 <div class="col-lg-6 order-lg-1">
                     <div class="p-5">
-                        <h2 class="display-4">Guide Login here </h2>
-                        <a href='/glog'> <input type="button" class="btn btn-danger" value="Guide Login"></a>
+                        <h2 class="display-4">Guide</h2>
+                        <a href='/glog'> <input type="button" class="btn btn-success" value="Sign In"></a>
+                        <a href='/greg'> <input type="button" class="btn btn-info" value="Sign Up"></a>
                     </div>
                 </div>
             </div>
@@ -379,8 +377,6 @@
         </div>
     </div>
 
-
-
     <div class="plans-section" id="rooms">
         <div class="container">
             <h3 class="title-w3-agileits title-black-wthree">Accomodation</h3>
@@ -390,7 +386,7 @@
                     <div class="price-block agile">
                         <div class="price-gd-top">
                             <img src="{{ asset('images/r1.jpg') }}" alt="single" class="img-responsive" />
-                            <h4>Single Bedroom</h4>
+                            <h4>Suite Room</h4>
                         </div>
 
                         <div class="price-gd-bottom">
@@ -405,8 +401,8 @@
                             </div>
 
                             <div class="price-selet">
-                                <h3><span>LKR</span>2000</h3>
-                                <a href="{{ url('/online_reservation') }}">Book Now</a>
+                                <h3><span>LKR</span>3000</h3>
+                                <a href="/book">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -416,7 +412,7 @@
                     <div class="price-block agile">
                         <div class="price-gd-top">
                             <img src="{{ asset('images/r2.jpg') }}" alt="double" class="img-responsive" />
-                            <h4>Double Bedroom</h4>
+                            <h4>Dulex Room</h4>
                         </div>
 
                         <div class="price-gd-bottom">
@@ -431,8 +427,8 @@
                             </div>
 
                             <div class="price-selet">
-                                <h3><span>LKR</span>4000</h3>
-                                <a href="{{ url('/online_reservation') }}">Book Now</a>
+                                <h3><span>LKR</span>5000</h3>
+                                <a href="/book">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -442,7 +438,7 @@
                     <div class="price-block agile">
                         <div class="price-gd-top">
                             <img src="{{ asset('images/r3.jpg') }}" alt="family" class="img-responsive" />
-                            <h4>Family Bedroom</h4>
+                            <h4>Standard Room</h4>
                         </div>
 
                         <div class="price-gd-bottom">
@@ -458,21 +454,20 @@
 
                             <div class="price-selet">
                                 <h3><span>LKR</span>7500</h3>
-                                <a href="{{ url('/online_reservation') }}">Book Now</a>
+                                <a href="/book">Book Now</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div id="book">
-                    <a href="{{ url('/online_reservation') }}" class="myButton">BOOK NOW!</a>
+                    <a href="/book" class="myButton">BOOK NOW!</a>
                 </div>
 
                 <div class="clearfix"></div>
             </div>
         </div>
     </div>
-
     <!--map section-->
     <div class="map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.0962259612743!2d81.05482181409569!3d6.997948619408864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae4620d9750137b%3A0x428e77b3738fe94f!2sHotel%20Green%20Mount!5e0!3m2!1sen!2slk!4v1572466908453!5m2!1sen!2slk" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>

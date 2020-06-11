@@ -46,7 +46,7 @@
             </div>
             <input type="hidden" name="_token" value="{{csrf_token()}}" />
             <div class="form-group">
-                <input type="submit" name="login" class="btn btn-danger" value="Login" />
+                <input type="submit" name="login" class="btn btn-success" value="Login" />
                 <a href='/greg'> <input type="button" name="register" class="btn btn-warning" value="Register Now" /></a><br /><br />
                 @foreach ($users as $user)
                 <tr>

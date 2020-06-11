@@ -5,36 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Page Content -->
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <title>Hotel : Tour deatils</title>
-    <style>
-        .productbox {
-            background-color: #ffffff;
-            padding: 10px;
-            margin-bottom: 10px;
-            -webkit-box-shadow: 0 8px 6px -6px #999;
-            -moz-box-shadow: 0 8px 6px -6px #999;
-            box-shadow: 0 8px 6px -6px #999;
-        }
+    <title>Hotel : User Dashborad</title>
 
-        .producttitle {
-            font-weight: bold;
-            padding: 5px 0 5px 0;
-        }
-
-        .productprice {
-            border-top: 1px solid #dadada;
-            padding-top: 5px;
-        }
-
-        .pricetext {
-            font-weight: bold;
-            font-size: 2.8em;
-        }
-    </style>
 </head>
 
 <body>
@@ -54,48 +26,90 @@
                         </div>
                         @endif
 
-                        You are logged in as <strong> User </strong>!<br />
 
-                        <a href='/bookss'> <input type="button" name="register" class="btn btn-primary" value="Book a Tour" /></a>
+                        You are logged in as <strong> User </strong>!<br />
+                        <h3 class="text-center text-success">{{ Session::get('message')}}</h3>
+
+                        <a href='/TP'> <input type="button" name="register" class="btn btn-primary" value="Book a Tour" /></a><br /><br />
+                        <a href='/book'> <input type="button" name="register" class="btn btn-success" value="Book Room" /></a>
+                        <a href='/change-password'> <input type="button" name="register" class="btn btn-success" value="Change Password" /></a>
+                        <a href='/bcancel'> <input type="button" name="register" class="btn btn-primary" value="Cancel Booking" /></a>
+
+
+                        <br />
+                        <br />
+                        <form method="post" action="/addleave">
+                            {{ csrf_field() }}
+                            <div class="form-group row">
+                                <label for="text" class="col-4 col-form-label">Enter Your Register No</label>
+                                <div class="col-8">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-address-card"></i>
+                                            </div>
+                                        </div>
+                                        <input id="ID" name="ID" onkeypress="return tabE(this,event)" placeholder="E001" type="text" class="form-control" required="required">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="name" class="col-4 col-form-label">Name</label>
+                                <div class="col-8">
+                                    <input id="name" name="name" onkeypress="return tabE(this,event)" placeholder="Ranil Ramanayaka" type="text" class="form-control" required="required">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="today" class="col-4 col-form-label">Requesting Date</label>
+                                <div class="col-8">
+                                    <input id="today" name="today" onkeypress="return tabE(this,event)" placeholder="2002-10-02" type="text" required="required" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="text1" class="col-4 col-form-label">Leaving Date</label>
+                                <div class="col-8">
+                                    <input id="Date" name="Date" onkeypress="return tabE(this,event)" placeholder="2002-10-10" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="text2" class="col-4 col-form-label">No Of Days</label>
+                                <div class="col-8">
+                                    <input id="#days" name="#days" onkeypress="return tabE(this,event)" placeholder="2" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="leavetype" class="col-4 col-form-label">Leave Type</label>
+                                <div class="col-8">
+                                    <select id="leavetype" onkeypress="return tabE(this,event)" name="leavetype" class="custom-select">
+                                        <option value="Annual">Annual Leave</option>
+                                        <option value="Casual">Casual Leave</option>
+                                        <option value="Medical">Medical Leave</option>
+                                        <option value="Nopay">Nopay</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="offset-4 col-8">
+                                    <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        @if (session('store'))
+                        <div class="alert alert-success" role="alert">
+
+                            Your Request is SUCCESS
+                            <strong> {{ session('update') }} </strong>
+                        </div>
+                        @endif
+
 
 
 
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <br /><br />
-    <div class="col-md-3 column productbox">
-        <img src="{{asset('tour_page/gallep.jpg')}}" class="img-responsive">
-        <div class="producttitle">Galle</div>
-        <div class="productprice">
-
-            <div class="pricetext">Visit to Galle</div>
-        </div>
-    </div>
-    <div class="col-md-3 column productbox">
-        <img src="{{asset('tour_page/anurap.jpg')}}" class="img-responsive">
-        <div class="producttitle">Anuradhapura</div>
-        <div class="productprice">
-
-            <div class="pricetext">Visit to Anuradhapura</div>
-        </div>
-    </div>
-    <div class="col-md-3 column productbox">
-        <img src="{{asset('tour_page/sigiriyap.jpg')}}" class="img-responsive">
-        <div class="producttitle">Sigiriya</div>
-        <div class="productprice">
-
-            <div class="pricetext">Visit to Sigiriya</div>
-        </div>
-    </div>
-    <div class="col-md-3 column productbox">
-        <img src="{{asset('tour_page/Badullap.jpg')}}" class="img-responsive">
-        <div class="producttitle">Badulla</div>
-        <div class="productprice">
-
-            <div class="pricetext">Visit to Badulla</div>
         </div>
     </div>
 
