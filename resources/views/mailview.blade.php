@@ -79,7 +79,6 @@
             <td>Email</td>
             <td>place</td>
             <td>dates</td>
-            <td>Guide Want</td>
             <td>Action</td>
         </tr>
         @foreach ($getbooksde as $user)
@@ -90,7 +89,6 @@
             <td>{{ $user->email }}</td>
             <td>{{ $user->place }}</td>
             <td>{{ $user->dates }}</td>
-            <td>{{ $user->guide }}</td>
             <td><a href='delete/{{ $user->id }}' class="text-primary">Cancel Tour</a></td>
         </tr>
         @endforeach

@@ -60,7 +60,7 @@ Route::get('/emp', function () {
 Route::get('/pay', function () {
     return view('pay');
 });
-Route::post('/', function (Request $request) {
+Route::post('/payy', function (Request $request) {
     \Stripe\Stripe::setApiKey('sk_test_jaXjNcbn3pLsh7vkAKpvRwF8');
     try {
         \Stripe\Charge::create(array(
@@ -103,12 +103,6 @@ Route::get('/sglog', function () {
 });
 Route::get('/sglog', 'ViewController@index'); /*guide details view*/
 
-
-//password changed
-Route::get('/glog', 'PassUpdateController@index');
-Route::get('editt/{id}', 'PassUpdateController@show');
-Route::post('edit/{id}', 'PassUpdateController@edit');
-
 //retrive data
 Route::get('view-records', 'TourViewController@index');
 
@@ -147,7 +141,7 @@ Route::get('/mail2', function () {
 
 Route::post('/mail2', 'MyMailController@sendMail2');
 
-//booking deatisl retriew2/////////////////////////////////////
+//booking deatisl retriew2
 Route::get('/bcancel', 'BookingDController2@view');
 
 //cancel booking2
@@ -156,6 +150,11 @@ Route::get('deletee/{id}', 'BookingDController2@destroy2');
 //cancel booking details
 Route::post("canceltbook", 'TCancelController@store');
 
+
+//Mail Sending guide
+Route::get('/customerdash', function () {
+    return view('cusdash');
+});
 
 //sinidu routes--------------------------------------------------------------------------
 //booking routes
@@ -172,13 +171,6 @@ Route::get('/payroom', function () {
 Route::get('/booksuccess', function () {
     return view('booksuccess');
 });
-
-//cancel mail
-Route::get('/mailroom', function () {
-    return view('mailroom');
-});
-
-
 
 Route::get('/h', function () {
     return view('Green_Mount'); //home page accomadation
@@ -349,6 +341,14 @@ Route::get('/reservation/{customer_id}/{flag}', [
     'as' => 'reservation',
     'uses' => 'CustomerController@reservation'
 ]);
+
+//room cancel mail
+Route::get('/sendmail', function () {
+    return view('sendemail');
+});
+
+Route::post('/sendmail', 'sendEmailController@sendMail');
+
 
 //navodya routes............................................
 

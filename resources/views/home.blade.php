@@ -5,35 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hotel : User Dashborad</title>
+    <title>Hotel : Add leave</title>
 
 </head>
 
 <body>
-    @extends('layouts.app')
+    @extends('layouts.app10')
 
     @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">User Dashboard</div>
+                    <div class="card-header">Add Leave</div>
 
                     <div class="card-body">
-                        @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                        @endif
 
 
-                        You are logged in as <strong> User </strong>!<br />
-                        <h3 class="text-center text-success">{{ Session::get('message')}}</h3>
 
-                        <a href='/TP'> <input type="button" name="register" class="btn btn-primary" value="Book a Tour" /></a><br /><br />
-                        <a href='/book'> <input type="button" name="register" class="btn btn-success" value="Book Room" /></a>
-                        <a href='/change-password'> <input type="button" name="register" class="btn btn-success" value="Change Password" /></a>
-                        <a href='/bcancel'> <input type="button" name="register" class="btn btn-primary" value="Cancel Booking" /></a>
+
 
 
                         <br />
@@ -95,14 +85,6 @@
                                 </div>
                             </div>
                         </form>
-
-                        @if (session('store'))
-                        <div class="alert alert-success" role="alert">
-
-                            Your Request is SUCCESS
-                            <strong> {{ session('update') }} </strong>
-                        </div>
-                        @endif
 
 
 

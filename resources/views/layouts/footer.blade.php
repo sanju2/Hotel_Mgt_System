@@ -24,7 +24,7 @@
                 <p>Tharindu : 0712620354</p>
                 <p>Navodya : 0710747770</p>
                 <p>Pavithra : 0710567890</p>
-                <p><a href='/admin/login'> <input type="button" class="btn btn-info" value="Admin Login"></a></p>
+                <p><a href='/admin/login'> <input type="button" class="btn btn-info btn-sm" value="Admin Login"></a></p>
             </div>
             <div class="col-12">
                 <hr class="light-100s">

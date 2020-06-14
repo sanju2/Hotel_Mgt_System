@@ -24,7 +24,6 @@ class BookController extends Controller
         $book->email =  $request->email;
         $book->place = $request->place;
         $book->dates = $request->dates;
-        $book->guide = $request->guide;
 
 
 

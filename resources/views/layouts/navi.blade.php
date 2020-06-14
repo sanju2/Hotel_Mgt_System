@@ -14,22 +14,16 @@
           <a class="nav-link" href="/register">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/gallery">Our Galley</a>
+          <a class="nav-link" href="/gallery">Galley</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/emp">Our Staff</a>
+          <a class="nav-link" href="/newspage">News</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/item">Food Delivery</a>
+          <a class="nav-link" href="/feed">Feedback</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/book">Room Booking</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/newspage">Our News</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/feed">Give Feedback</a>
+          <a class="nav-link" href="/emp">Contact Us</a>
         </li>
       </ul>
     </div>

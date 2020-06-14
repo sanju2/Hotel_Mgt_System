@@ -12,7 +12,7 @@ class BookingDController2 extends Controller
     public function view()
     {
 
-        $books = DB::table('books')->select('id', 'name', 'phone', 'email', 'place', 'dates', 'guide')->get();
+        $books = DB::table('books')->select('id', 'name', 'phone', 'email', 'place', 'dates')->get();
         return view('bcancel')->with('books', $books);
     }
     public function destroy2($id)

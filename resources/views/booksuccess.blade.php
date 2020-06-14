@@ -4,6 +4,14 @@
     <head>
         @extends('layouts.head')
         @section('title' , "Booking Success")
+
+        <style>
+		body {
+			background-image: url("{{asset('images/email_send.jpg')}}");
+			background-size: cover;
+			height: 100%;
+		}
+	</style>
     </head>
 
     <body>
@@ -26,9 +34,10 @@
         <br />
         <br />
         
-    <h2>You Have Successfully Book your Room </h2>
-    <h4>If you wish to cansel your reservation please let us know before 24 hours.</h4>
-    <button class="btn btn-success btn-block btn-lg" type="submit"><a href="{{url('/mailroom')}}">Cancel your reservation</a></button>
+    <h3>You Have Successfully Book your Room </h3>
+    <h4>If you wish to cancel your reservation please let us know before 24 hours.</h4>
+    
+    
    
                 
                

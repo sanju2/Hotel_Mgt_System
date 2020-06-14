@@ -105,8 +105,7 @@
                 <th>Type ID</th>
                 <th>Name</th>
                 <th>Base Price (LKR)</th>
-                <th>Total Room Count</th>
-                <th>Available Room Count</th>
+                
                 <th>Actions</th>
             </tr>
             </thead>
@@ -117,9 +116,7 @@
                         <td>{{ $room_type->id }}</td>
                         <td>{{ $room_type->name }}</td>
                         <td>{{ $room_type->base_price }}</td>
-                        <td>{{ $room_type->total }}</td>
-                        <td>{{ $room_type->available }}</td>
-
+                        
                         <td>
                             <a href="/view_type/{{ $room_type->id }}" class="view">
                                 <i class="material-icons" data-toggle="tooltip" title="View">&#xE417;</i>
@@ -147,7 +144,7 @@
 
         <div class="clearfix"></div>
     </div>
-</div>
+]</div>
 
 <!-- Add Modal HTML -->
 <div id="addRoomTypeModal" class="modal fade">

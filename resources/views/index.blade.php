@@ -188,7 +188,7 @@
             top: 60%;
             left: 50%;
             transform: translateX(-50%) translateY(-50%);
-            text-transform: lowercase;
+            text-transform: uppercase;
             font-family: agency fb;
             width: 100%;
         }
@@ -213,8 +213,8 @@
     <div class="blockx">
         <div id="box1">
             <div class="box1text">
-                <h1>No.1 Hotel in Srilanka</h1>
-                <h5>Welcome to Our World</h5>
+                <h1>Welcome to Green Mount Hotel</h1>
+                <h5>BADULLA</h5>
             </div>
         </div>
     </div>
@@ -235,9 +235,10 @@
                 </div>
                 <div class="col-lg-6 order-lg-1">
                     <div class="p-5">
-                        <h2 class="display-4">Guide</h2>
-                        <a href='/glog'> <input type="button" class="btn btn-success" value="Sign In"></a>
-                        <a href='/greg'> <input type="button" class="btn btn-info" value="Sign Up"></a>
+                        <h1>GUIDE</h1>
+                        <h6 style="font-size: larger;">Tour guides accompany groups of visitors to tourist attractions, whether on day trips or longer visits, and give them information and insights that help them make the most of the experience. Potential tour guides should be fit and healthy with lots of energy and confidence.</h6>
+                        <a href='/glog'> <input type="button" class="btn btn-success btn-lg" value="Sign In"></a>
+                        <a href='/greg'> <input type="button" class="btn btn-info btn-lg" value=" Sign Up"></a>
                     </div>
                 </div>
             </div>
@@ -294,7 +295,7 @@
                     <div class="price-block agile">
                         <div class="price-gd-top">
                             <img src="{{ asset('images/t1.jpg') }}" alt="single" class="img-responsive" />
-                            <h4>One Day Tour</h4>
+                            <h4>High Security</h4>
                         </div>
 
                         <div class="price-gd-bottom">
@@ -309,8 +310,7 @@
                             </div>
 
                             <div class="price-selet">
-                                <h3><span>LKR</span>2000</h3>
-                                <a href="/home">Book Now</a>
+
                             </div>
                         </div>
                     </div>
@@ -320,7 +320,7 @@
                     <div class="price-block agile">
                         <div class="price-gd-top">
                             <img src="{{ asset('images/t2.jpg') }}" alt="double" class="img-responsive" />
-                            <h4>3 days Tour</h4>
+                            <h4>Less Cost</h4>
                         </div>
 
                         <div class="price-gd-bottom">
@@ -335,8 +335,6 @@
                             </div>
 
                             <div class="price-selet">
-                                <h3><span>LKR</span>4000</h3>
-                                <a href="/home">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -346,7 +344,7 @@
                     <div class="price-block agile">
                         <div class="price-gd-top">
                             <img src="{{ asset('images/t3.jpg') }}" alt="family" class="img-responsive" />
-                            <h4>More Than 3 Days</h4>
+                            <h4>Confertable</h4>
                         </div>
 
                         <div class="price-gd-bottom">
@@ -361,15 +359,13 @@
                             </div>
 
                             <div class="price-selet">
-                                <h3><span>LKR</span>7500</h3>
-                                <a href="/home">Book Now</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div id="book">
-                    <a href="/home" class="myButton">BOOK NOW!</a>
+                    <a href="/home" class="myButton">BOOK NOW</a>
                 </div>
 
                 <div class="clearfix"></div>

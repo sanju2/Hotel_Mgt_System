@@ -126,7 +126,7 @@
                 <div class="card">
                     <div class="card-header text-center display-4">
                         Booking Your Tour
-                        <h3 class="text-center text-danger">{{ Session::get('message')}}</h3>
+                        <h3 class="text-center text-success">{{ Session::get('message')}}</h3>
                     </div>
                     <div class="card-body">
                         <form action="/books" method="post">
@@ -144,21 +144,21 @@
                                     <label for="phonenumber">Email Address</label>
                                     <input type="email" class="form-control" name="email" id="phonenumber" placeholder="Email">
                                 </div>
+
                                 <div class="form-group col-md-4">
-                                    <label for="middleName">place</label>
-                                    <input type="text" name="place" class="form-control" id="middleName" placeholder="Place">
+                                    <label for="inputState">place</label>
+                                    <select id="yeardropdown" name="place" class="form-control">
+                                        <option selected>Galle</option>
+                                        <option selected>Anuradhapura</option>
+                                        <option selected>Sigiriya</option>
+                                        <option selected>Badulla</option>
+                                    </select>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="Sername">Dates</label>
                                     <input type="text" name="dates" class="form-control" id="Sername" placeholder="Dates">
                                 </div>
-                                <div class="form-group col-md-4">
-                                    <label for="inputState">Want a driver</label>
-                                    <select id="yeardropdown" name="guide" class="form-control">
-                                        <option selected>No</option>
-                                        <option selected>Yes</option>
-                                    </select>
-                                </div>
+
                             </div>
                             <button type="submit" name="book" action="/pay" class="btn btn-primary btn-lg btn-block">Book Now</button>
                         </form>

@@ -14,9 +14,9 @@
         }
 
         body {
-            background: rgb(162, 45, 238);
-            background: linear-gradient(174deg, rgba(162, 45, 238, 1) 0%, rgba(91, 112, 191, 1) 100%);
-            color: #786fa4;
+            background-image: url("{{asset('images/gret.jpg')}}");
+            background-size: cover;
+            height: 100%;
             overflow-x: hidden;
             font-size: 14px;
         }
@@ -126,25 +126,27 @@
             <div class="col align-self-cente ">
                 <div class="card">
                     <div class="card-header text-center display-4">
-                        Cancel the Tour
-                          <h3 class="text-center text-success">{{ Session::get('mess')}}</h3>
+                        Cancel Tour
+                        <h3 class="text-center text-success">{{ Session::get('mess')}}</h3>
                     </div>
                     <div class="card-body">
                         <form action="canceltbook" method="post" enctype="multipart/form-data">
-                          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 
-                                    <label for="firstName">Reason : </label>
-                                    <input class="form-control form-control-lg" name="to" type="text" placeholder="What are the reason for cancel tour"><br />
-                                    <label for="firstName">Phone No : </label>
-                                    <input class="form-control form-control-lg" name="phone" type="text" placeholder="Phone No"><br />
+                            <label for="firstName">Reason : </label>
+                            <input class="form-control form-control-lg" name="to" type="text" placeholder="What are the reason for cancel tour"><br />
+                            <label for="firstName">Phone No : </label>
+                            <input class="form-control form-control-lg" name="phone" type="text" placeholder="Phone No"><br />
 
-                                    @foreach ($books as $user)
-                                  <a href="deletee/{{ $user->id }}"><button type="submit"  action=""  class="btn btn-primary btn-lg btn-block">Cancel Now</button></a>
-                                    @endforeach
+                            @foreach ($books as $user)
+                            <a href="deletee/{{ $user->id }}"><button type="submit" action="" class="btn btn-primary btn-lg btn-block">Cancel Now</button></a>
+                            @endforeach
+                            <br />
+                            <a href="/customerdash"><button type="button" class="btn btn-success btn-lg btn-block">Back</button></a>
 
 
-                       </form>
+                        </form>
                     </div>
                 </div>
             </div>

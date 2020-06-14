@@ -1,11 +1,15 @@
 @extends('layouts.app')
 @section('content')
+<br />
+<br />
+<br />
+<br />
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Change Password</div>
-                <h3 class="text-center text-danger">{{ Session::get('message')}}</h3>
+                <h3 class="text-center text-success">{{ Session::get('message')}}</h3>
                 <div class="card-body">
                     <form method="POST" action="{{ route('change.password') }}">
                         @csrf
@@ -43,8 +47,10 @@
                                 <button type="submit" class="btn btn-primary">
                                     Update Password
                                 </button>
+                                <a href="/customerdash" class="btn btn-success" role="button">Back</a>
                             </div>
                         </div>
+
                     </form>
                 </div>
             </div>

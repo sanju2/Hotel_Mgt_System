@@ -14,8 +14,8 @@ class PdfController extends Controller
      */
     public function generatePDF()
     {
-        $data = ['title' => 'Welcome to GREENMOUNT'];
-        $pdf = PDF::loadView('myPDF', $data);
+
+        $pdf = PDF::loadView('myPDF');
 
         return $pdf->download('greentel_tour.pdf');
     }

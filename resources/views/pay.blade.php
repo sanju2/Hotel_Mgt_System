@@ -7,7 +7,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	<style>
 		body {
-			background-color: #99ccff;
+
+			background-image: url("{{asset('images/guide_dash.jpg')}}");
 			background-size: cover;
 			height: 100%;
 		}
@@ -20,12 +21,16 @@
 	<br />
 	<br />
 	<div class="container">
-		<h1>Do Your Payments</h1>
+		<center>
+			<h1>Do Your Payments</h1>
+		</center>
+		<br />
+		<br />
 		<div class='row'>
 			<div class='col-md-4'></div>
 			<div class='col-md-4'>
 				<script src='https://js.stripe.com/v2/' type='text/javascript'></script>
-				<form accept-charset="UTF-8" action="/" class="require-validation" data-cc-on-file="false" data-stripe-publishable-key="pk_test_MFeBrFUlMk28oALP6FLXAXnw" id="payment-form" method="post">
+				<form accept-charset="UTF-8" action="/payy" class="require-validation" data-cc-on-file="false" data-stripe-publishable-key="pk_test_MFeBrFUlMk28oALP6FLXAXnw" id="payment-form" method="post">
 					{{ csrf_field() }}
 					<div class='form-row'>
 						<div class='col-xs-12 form-group required'>

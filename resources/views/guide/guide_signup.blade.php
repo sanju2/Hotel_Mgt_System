@@ -49,7 +49,7 @@
       <div class="panel-heading">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <h1>Guide Register Here</h1>
-        <h3 class="text-center text-warning">{{ Session::get('message')}}</h3>
+        <h3 class="text-center text-success">{{ Session::get('message')}}</h3>
       </div>
       <div class="panel-body">
 

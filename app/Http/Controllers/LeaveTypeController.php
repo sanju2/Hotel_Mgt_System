@@ -38,9 +38,7 @@ class LeaveTypeController extends Controller
      */
     public function save(StoreBlogPost $request)
     {
-        // The incoming request is valid...
 
-        // Retrieve the validated input data...
 
         $validatedData = $request->validated();
         $leaveType = new LeaveType([
@@ -52,7 +50,6 @@ class LeaveTypeController extends Controller
 
 
         return redirect()->back()->with('success', 'The Form Data is successfully inserted to the Database!');
-
     }
 
 
@@ -81,8 +78,6 @@ class LeaveTypeController extends Controller
         ]);
         $leaveType->save();
         return back()->with('store', 'Content has been store successfully!');
-
-
     }
 
     /**

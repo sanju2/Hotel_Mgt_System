@@ -94,7 +94,7 @@
     &nbsp;
     &nbsp;
     <a href="/bookss" class="btn btn-success" role="button">Book Now</a>
-    <a href="/home" class="btn btn-warning" role="button">Back</a>
+    <a href="/customerdash" class="btn btn-warning" role="button">Back</a>
     <a href="/generate-pdf" class="btn btn-primary" role="button">Generate Pdf</a>
 
 </body>

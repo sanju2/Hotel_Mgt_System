@@ -7,7 +7,7 @@
 
     <style>
         body {
-            background-image: url("{{asset('images/guide_login.jpg')}}");
+            background-image: url("{{asset('img/wifi.jpg')}}");
             background-size: cover;
             height: 100%;
         }
@@ -24,7 +24,7 @@
     <br />
     <div class="container box">
         <h3 align="center">Guide Login Here</h3><br />
-        <h3 class="text-center text-danger">{{ Session::get('message')}}</h3>
+        <h3 class="text-center text-success">{{ Session::get('message')}}</h3>
         @foreach ($errors->all() as $error)
 
         <div class="alert alert-denger" role="alert">
@@ -47,12 +47,7 @@
             <input type="hidden" name="_token" value="{{csrf_token()}}" />
             <div class="form-group">
                 <input type="submit" name="login" class="btn btn-success" value="Login" />
-                <a href='/greg'> <input type="button" name="register" class="btn btn-warning" value="Register Now" /></a><br /><br />
-                @foreach ($users as $user)
-                <tr>
-                    <td><a href='editt/{{ $user->id }}'> <input type="button" name="forgetpass" class="btn btn-dark" value="Forget Password" /></a></td>
-                </tr>
-                @endforeach
+                <a href='/greg'> <input type="button" name="register" class="btn btn-primary" value="Register Now" /></a><br /><br />
 
 
             </div>

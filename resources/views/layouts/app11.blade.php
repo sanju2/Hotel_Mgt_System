@@ -25,7 +25,7 @@
     <style>
         body {
 
-            background-image: url("{{asset('images/gret.jpg')}}");
+
             background-size: cover;
             height: 100%;
 

@@ -2,11 +2,11 @@
 <html>
 
 <head>
-    <title>Hi</title>
+    <title>Green Mount Hotel</title>
 </head>
 
 <body>
-    <h1>{{ $title }}</h1>
+    <h1>Welcome to Green Mount Hotel</h1>
     <h5>Galle</h5><br />
     <p>Galle is a city situated on the southwestern tip of Sri Lanka, 119 km from Colombo. Galle is the best example of a fortified city built by Europeans in south and Southeast Asia, showing the interaction between European architectural styles and south Asian traditions.</p><br />
     <h5>Anuradhapura</h5><br />

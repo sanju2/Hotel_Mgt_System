@@ -11,10 +11,10 @@
 
 <script>
 	 var token = "{{Session::token()}}";
-    var url = "{{route('checkdata')}}";  
+    var url = "{{route('checkdata')}}";
 
   $(document).ready(function() {
-  
+
     $('#calendar').fullCalendar({
 
       header: {
@@ -23,28 +23,28 @@
         right: 'month,listYear'
       },
 
-      displayEventTime: false, 
+      displayEventTime: false,
 
       googleCalendarApiKey: 'AIzaSyDcnW6WejpTOCffshGDDb4neIrXVUA1EAE',
-    
-     
+
+
       events: 'en.usa#holiday@group.v.calendar.google.com',
-      
+
       eventClick: function(event) {
-       
+
         window.open(event.url, 'gcalevent', 'width=700,height=600');
         return false;
       },
-      
+
       loading: function(bool) {
         $('#loading').toggle(bool);
       }
-      
+
     });
 
-    
 
-    
+
+
   });
 
 </script>
@@ -85,13 +85,13 @@ body{
 
 @section('content')
 <div class="container">
-	
-	
-	
+
+
+
 		<div class="row well" id="content">
 			<form action="{{route('request')}}" method="POST">
 	        <div class="col-md-2">
-				
+
 				<div class="form-group{{$errors->has('checkin') ? ' has-error' : ''}}" id="date">
 					<label>Check-In</label>
 					<input type="date" name="checkin" class="form-control" value="<?php echo $date = date('Y-m-d');?>" id="checkin">
@@ -139,7 +139,7 @@ body{
 					<div id="group1">
 						<label>Amenities</label>
 						<div class="form-group">
-							<label>Room No</label>
+						<label>No of Rooms</label>
 							<select name="room" required="" id="room">
 								<option>1</option>
 								<option>2</option>
@@ -155,9 +155,9 @@ body{
 								<option value="1">Standard</option>
 							</select>
 
-							
+
 						</div>
-						
+
 					</div>
 					<div id="group_1" style="display: none">
 						<div class="form-group">
@@ -172,7 +172,7 @@ body{
 				</div>
 				<div class="col-md-4">
 					<div id="bookBtn">
-						
+
 						<button class="btn btn-warning btn-lg btn-block" id="check_me" type="button">Check Availability</button>
 					</div>
 					<div id="Btns" style="display: none;">
@@ -181,7 +181,7 @@ body{
 					</div>
 				</div>
 				{{csrf_field()}}
-			</form>															
+			</form>
 		</div>
 
 		<div class="row well">
@@ -211,7 +211,7 @@ body{
 				<div class="col-md-4" id="suite2">
 					<h3>Suite Room</h3>
 					<img src="{{URL::to('/images/1.jpg')}}" alt="image here" width="300px" height="235px">
-					
+
 				</div>
 
 				<div class="col-md-4" id="deluxe1" style="display: none;">
@@ -236,7 +236,7 @@ body{
 			<div class="col-md-4" id="deluxe2" style="display: none;">
 				<h3>Deluxe Room</h3>
 				<img src="{{URL::to('/images/2.jpg')}}" alt="image here" width="300px" height="235px">
-				
+
 			</div>
 
 			<div class="col-md-4" id="standard1" style="display: none;">
@@ -261,32 +261,32 @@ body{
 			<div class="col-md-4" id="standard2" style="display: none;">
 				<h3>Standard Room</h3>
 				<img src="{{URL::to('/images/3.jpg')}}" alt="image here" width="300px" height="235px">
-				
+
 			</div>
 		</div>
-	        
 
-	        
+
+
 	 </div>
-	
+
 
 
 @endsection
 
 @section('scripts')
 
-<script type="text/javascript" src="{{URL::to('/calendar/scripts/dateTimePicker.min.js')}}"></script> 
+<script type="text/javascript" src="{{URL::to('/calendar/scripts/dateTimePicker.min.js')}}"></script>
 <script src="{{URL::to('/calendar/fullcalendar.min.js')}}"></script>
 <script src="{{URL::to('/calendar/gcal.min.js')}}"></script>
 
     <script type="text/javascript">
-   	
+
       $(document).ready(function(){
-      
+
       $('#glob-data').calendar({
         unavailable: ['{{"2017-2-9"}}', '2017-02-10']
       });
-      
+
       $("#change_room").change(function(){
       	var change = $("#change_room").val();
       	if(change == "2"){
@@ -313,7 +313,7 @@ body{
 	      }
       });
 
-     
+
 
       $("#verify").on('click', function(){
       	$("#date").show();
@@ -329,23 +329,23 @@ body{
 
       	if(checkin > checkout){
       		// alert("I'm sorry it is impossible for us to serve you in that date!!");
-			  
+
       		alert("Not available");
       		return false;
       	}
       	 var d = new Date();
       	 var date = d.getFullYear() + "-" +0+parseInt( d.getUTCMonth() + 1 )   + "-" + d.getDate();
       	if(checkin < date){
-      		alert("Not available"); 
+      		alert("Not available");
       		return false;
       	}
-      	
+
 
       	$.ajax({
 		      	url: url,
 		      	type: "POST",
 		      	data: {"checkin": checkin, "checkout": checkout, "room": room, "type": type, _token: token},
-		      
+
 		      	success: function(response, status, http){
 		      		if(response){
 		      			alert("not available");
@@ -362,11 +362,11 @@ body{
 		      	}
 		      	});
       });
-      
+
     });
     </script>
    <script type="text/javascript">
-   
+
     </script>
 
 

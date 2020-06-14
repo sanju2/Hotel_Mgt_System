@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2020 at 02:16 AM
+-- Generation Time: Jun 14, 2020 at 09:31 PM
 -- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.2
+-- PHP Version: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -44,7 +43,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@gmail.com', NULL, '$2y$10$0UeSTNhPs5TExTGMIBGFYeahGvL2FRviv7lmpdFeMAZtIkInOf3pi', NULL, '2020-02-29 01:30:57', '2020-02-29 01:30:57'),
+(1, 'Admin', 'admin@gmail.com', NULL, '$2y$10$0UeSTNhPs5TExTGMIBGFYeahGvL2FRviv7lmpdFeMAZtIkInOf3pi', 'Kgrn2VJoqP3z7BsMX4zHR6008v6jtSx5uK8dLAFFOerGypDs2cSWaSVlgX0k', '2020-02-29 01:30:57', '2020-02-29 01:30:57'),
 (2, 'S.M.L.S.Silva', 'lsanjeewa18@gmail.com', NULL, '$2y$10$HJGsOHihdYVzyEXD/i4Pe.YQ6EwJ7JxyZo6G91JMJ89C8Znh5eOMq', NULL, '2020-03-05 11:16:22', '2020-03-05 11:16:22');
 
 -- --------------------------------------------------------
@@ -84,18 +83,38 @@ CREATE TABLE `books` (
   `place` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `dates` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `guide` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `books`
 --
 
-INSERT INTO `books` (`id`, `name`, `phone`, `email`, `place`, `dates`, `created_at`, `updated_at`, `guide`) VALUES
-(11, 'TestBookig', '0775094902', 'lsanjeewa947@gmail.com', 'ambalangoda', '2', '2020-05-04 14:29:29', '2020-05-04 14:29:29', 'Yes'),
-(12, 'lasantha', '678754753655', 'testuser@gmail.com', 'fsdfdsf', '3', '2020-05-19 02:51:11', '2020-05-19 02:51:11', 'Yes'),
-(13, 'nethmi', '0773136537', 'kawyanethmi9@gmail.com', 'galle', '4', '2020-05-19 08:50:47', '2020-05-19 08:50:47', 'No');
+INSERT INTO `books` (`id`, `name`, `phone`, `email`, `place`, `dates`, `created_at`, `updated_at`) VALUES
+(28, 'Lasantha', '0775094902', 'lsanjeewa947@gmail.com', 'Galle', '4', '2020-06-14 13:42:56', '2020-06-14 13:42:56');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `canceltdetails`
+--
+
+CREATE TABLE `canceltdetails` (
+  `id` int(11) NOT NULL,
+  `to` varchar(256) NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `created_at` date NOT NULL,
+  `updated_at` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `canceltdetails`
+--
+
+INSERT INTO `canceltdetails` (`id`, `to`, `phone`, `created_at`, `updated_at`) VALUES
+(5, 'My Idea was changed', '0775094902', '2020-06-11', '2020-06-11'),
+(6, 'My mind change', '0775094902', '2020-06-14', '2020-06-14'),
+(7, 'My Idea Was Changed', '0775094902', '2020-06-14', '2020-06-14');
 
 -- --------------------------------------------------------
 
@@ -143,10 +162,14 @@ CREATE TABLE `customers` (
   `id` int(10) UNSIGNED NOT NULL,
   `fname` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `lname` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mname` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gender` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dob` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `nic` varchar(12) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `phone` char(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `contact` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
@@ -156,14 +179,38 @@ CREATE TABLE `customers` (
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`id`, `fname`, `lname`, `nic`, `email`, `phone`, `address`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'lasantha', 'sanjeewa', NULL, NULL, '0775094902', NULL, '2020-05-18 21:44:07', '2020-05-18 21:44:07', NULL),
-(2, 'lasantha', 'sanjeewa', NULL, NULL, '0775094902', NULL, '2020-05-18 22:01:42', '2020-05-18 22:01:42', NULL),
-(3, 'lasantha', 'sanjeewa', NULL, NULL, '0775094902', NULL, '2020-05-19 03:25:12', '2020-05-19 03:25:12', NULL),
-(4, 'navodya', 'sathsarani', NULL, NULL, '0705608259', NULL, '2020-05-23 02:59:24', '2020-05-23 02:59:24', NULL),
-(5, 'navodya', 'sathsarani', NULL, NULL, '0710747770', NULL, '2020-05-23 05:46:15', '2020-05-23 05:46:15', NULL),
-(6, 'navodya', 'sathsarani', NULL, NULL, '0710747770', NULL, '2020-05-23 05:46:25', '2020-05-23 05:46:25', NULL),
-(7, 'navodya', 'sathsarani', NULL, NULL, '0710747770', NULL, '2020-05-23 05:46:49', '2020-05-23 05:46:49', NULL);
+INSERT INTO `customers` (`id`, `fname`, `lname`, `mname`, `gender`, `dob`, `nic`, `email`, `phone`, `address`, `contact`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'lasantha', 'sanjeewa', '', '', '', NULL, NULL, '0775094902', NULL, '', '2020-05-18 21:44:07', '2020-05-18 21:44:07', NULL),
+(2, 'lasantha', 'sanjeewa', '', '', '', NULL, NULL, '0775094902', NULL, '', '2020-05-18 22:01:42', '2020-05-18 22:01:42', NULL),
+(3, 'lasantha', 'sanjeewa', '', '', '', NULL, NULL, '0775094902', NULL, '', '2020-05-19 03:25:12', '2020-05-19 03:25:12', NULL),
+(4, 'navodya', 'sathsarani', '', '', '', NULL, NULL, '0705608259', NULL, '', '2020-05-23 02:59:24', '2020-05-23 02:59:24', NULL),
+(5, 'navodya', 'sathsarani', '', '', '', NULL, NULL, '0710747770', NULL, '', '2020-05-23 05:46:15', '2020-05-23 05:46:15', NULL),
+(6, 'navodya', 'sathsarani', '', '', '', NULL, NULL, '0710747770', NULL, '', '2020-05-23 05:46:25', '2020-05-23 05:46:25', NULL),
+(7, 'navodya', 'sathsarani', '', '', '', NULL, NULL, '0710747770', NULL, '', '2020-05-23 05:46:49', '2020-05-23 05:46:49', NULL),
+(8, 'navodya', 'sathsarani', 'pavithra', 'female', '2020-05-01', NULL, 'navodya@gmail.com', NULL, 'gcchch', '0714568925', '2020-05-29 07:56:24', '2020-05-29 07:56:24', NULL),
+(9, 'navodya', 'sathsarani', 'pavithra', 'female', '2020-05-01', NULL, 'navodya@gmail.com', NULL, 'hhchc', '0714568925', '2020-05-29 07:56:56', '2020-05-29 07:56:56', NULL),
+(10, 'dhdh', 'yt', 'ddddddddddd', 'male', '2020-04-29', NULL, 'navodya@gmail.com', NULL, 'gdfgd', '0714568925', '2020-05-29 07:57:44', '2020-05-29 07:57:44', NULL),
+(11, 'navodya', 'sathsarani', 'pavithra', 'male', '2020-05-01', NULL, 'navodya@gmail.com', NULL, 'jghhghf', '0714568925', '2020-05-29 08:02:30', '2020-05-29 08:02:30', NULL),
+(12, 'navodya', 'sathsarani', 'pavithra', 'female', '2020-05-01', NULL, 'navodya@gmail.com', NULL, 'czdgzfz', '0714568925', '2020-05-29 08:49:45', '2020-05-29 08:49:45', NULL),
+(13, 'navodya', 'sathsarani', 'pavithra', 'female', '2020-05-01', NULL, 'navodya@gmail.com', NULL, 'czdgzfz', '0714568925', '2020-05-29 09:01:52', '2020-05-29 09:01:52', NULL),
+(14, 'navodya', 'sathsarani', 'pavithra', 'male', '2020-05-30', NULL, 'navodya@gmail.com', NULL, 'mgjghv', '0714568925', '2020-05-29 09:02:56', '2020-05-29 09:02:56', NULL),
+(15, 'navodya', 'sathsarani', 'pavithra', 'male', '2020-05-30', NULL, 'navodya@gmail.com', NULL, 'mgjghv', '0714568925', '2020-05-29 09:03:48', '2020-05-29 09:03:48', NULL),
+(16, 'navodya', 'sathsarani', 'pavithra', 'male', '2020-05-01', NULL, 'navodya@gmail.com', NULL, 'jhfhfh', '0714568925', '2020-05-29 09:05:18', '2020-05-29 09:05:18', NULL),
+(17, 'fdfax', 'sathsarani', 'pavithra', 'male', '2020-05-01', NULL, 'navodya@gmail.com', NULL, 'jhfhgj', '0714568925', '2020-05-29 09:07:59', '2020-05-29 09:07:59', NULL),
+(18, 'navodya', 'sathsarani', 'pavithra', 'male', '2020-05-01', NULL, 'navodya@gmail.com', NULL, 'gzgzz', '0714568925', '2020-05-29 09:16:45', '2020-05-29 09:16:45', NULL),
+(19, 'navodya', 'sathsarani', 'pavithra', 'male', '2020-05-01', NULL, 'admin@gmail.com', NULL, 'zdgdg', '0714568925', '2020-05-29 09:20:22', '2020-05-29 09:20:22', NULL),
+(20, 'navodya', 'sathsarani', 'pavithra', 'male', '2020-05-30', NULL, 'navodya@gmail.com', NULL, 'vvzv', '0714568925', '2020-05-29 09:24:33', '2020-05-29 09:24:33', NULL),
+(21, 'navodya', 'sathsarani', 'pavithra', 'male', '2020-05-01', NULL, 'navodya@gmail.com', NULL, 'khjg', '0714568925', '2020-05-29 09:42:38', '2020-05-29 09:42:38', NULL),
+(22, 'navodya', 'sathsarani', 'pavithra', 'male', '2020-05-01', NULL, 'navodya@gmail.com', NULL, 'ffsfs', '0714568925', '2020-05-29 10:09:13', '2020-05-29 10:09:13', NULL),
+(23, 'dsfsdf', 'dfgds', 'dfsd', 'male', '1996-06-07', NULL, 'rwerwer@gmail.com', NULL, 'ergerterter', '0775094902', '2020-05-31 00:34:50', '2020-05-31 00:34:50', NULL),
+(24, 'dsfsdf', 'dfgds', 'dfsd', 'male', '1996-06-07', NULL, 'rwerwer@gmail.com', NULL, 'ergerterter', '0775094902', '2020-05-31 00:38:20', '2020-05-31 00:38:20', NULL),
+(25, 'dsfsdf', 'dfgds', 'dfsd', 'male', '1996-06-07', NULL, 'rwerwer@gmail.com', NULL, 'ergerterter', '0775094902', '2020-05-31 00:39:16', '2020-05-31 00:39:16', NULL),
+(26, 'dasd', 'asASa', 'dsadsa', 'male', '1996-02-03', NULL, 'fsdfsdf@dfgfdg.com', NULL, 'gdfgvdgsdgsd', '7677476543', '2020-05-31 00:58:06', '2020-05-31 00:58:06', NULL),
+(27, 'dsfsd', 'sffsd', 'dsfsd', 'male', '1996-07-01', NULL, 'ddffsd@ggdff.com', NULL, 'fdvdsffsdfds', '0766654321', '2020-05-31 01:12:05', '2020-05-31 01:12:05', NULL),
+(28, 'fsdfsd', 'dsdfsd', 'dsdfsdfsd', 'male', '1996-01-07', NULL, 'fsdfsdf@gmail.com', NULL, 'nbcbhfghdfhdtbc cb c', '43534554322', '2020-05-31 01:48:12', '2020-05-31 01:48:12', NULL),
+(29, 'fsdfsd', 'dsdfsd', 'dsdfsdfsd', 'male', '1996-01-07', NULL, 'fsdfsdf@gmail.com', NULL, 'nbcbhfghdfhdtbc cb c', '43534554322', '2020-05-31 01:48:13', '2020-05-31 01:48:13', NULL),
+(30, 'gdfg', 'dfgdfg', 'fdgdfg', 'male', '1996-08-09', NULL, 'lsanjeewa947@gmail.com', NULL, 'dfgfdsgsgsg', '0775094902', '2020-05-31 01:55:59', '2020-05-31 01:55:59', NULL),
+(31, 'dasdsa', 'dasdas', 'ddasd', 'male', '1996-07-02', NULL, 'gsvsd@gmail.com', NULL, 'dgdfgfgfggfgfd', '0745654346', '2020-05-31 02:05:36', '2020-05-31 02:05:36', NULL);
 
 -- --------------------------------------------------------
 
@@ -332,7 +379,9 @@ CREATE TABLE `feedback` (
 --
 
 INSERT INTO `feedback` (`id`, `name`, `email`, `text`, `created_at`, `updated_at`) VALUES
-(3, 'lasantha', 'lsanjeewa947@gmail.com', 'it is very good web site', '2020-04-27 12:28:50', '2020-04-27 12:28:50');
+(3, 'lasantha', 'lsanjeewa947@gmail.com', 'it is very good web site', '2020-04-27 12:28:50', '2020-04-27 12:28:50'),
+(4, 'lhgsg', 'lsanjeewa947@gmail.com', 'It is good website', '2020-05-31 23:13:42', '2020-05-31 23:13:42'),
+(5, 'lasantha', 'lsanjeewa947@gmail.com', 'It is good web site', '2020-06-14 06:14:18', '2020-06-14 06:14:18');
 
 -- --------------------------------------------------------
 
@@ -357,23 +406,23 @@ CREATE TABLE `fooditems` (
 --
 
 INSERT INTO `fooditems` (`id`, `itemname`, `price`, `calorie`, `image`, `cat_id`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'choco_love_rose_cake', '1200', '1500cl', 'choco_love_rose_cake.jfif', '1', 'choco love rose cake....Specially for your loved once', '2020-05-22 03:06:29', '2020-05-23 08:11:42'),
-(2, 'divine_cake', '1000', '1200cl', 'divine_cake.jfif', '1', 'Divine cake with cherries', '2020-05-22 03:08:38', '2020-05-22 03:08:38'),
-(3, 'happy_birthday', '1700', '2000cl', 'happy_birthday.jfif', '1', 'For your loved ones birthday', '2020-05-22 03:09:24', '2020-05-22 03:09:24'),
-(4, 'pineapple_cake', '1500', '1700cl', 'pineapple_cake1.jpg', '1', 'Made using fresh pineapples', '2020-05-22 03:10:40', '2020-05-22 03:10:40'),
-(5, 'chocolate_and_mint_cake_jar', '500', '1000cl', 'chocolate_and_mint_cake_jar.jpg', '2', 'Chocolate and mint taste added for this cake...only from our hotel in badulla', '2020-05-22 03:11:45', '2020-05-22 03:11:45'),
-(6, 'creme_brulee', '600', '1100cl', 'creme_brulee.jfif', '2', 'cremee cake.....newly introduce one', '2020-05-22 03:12:23', '2020-05-22 03:12:23'),
-(7, 'No_bake_cheese_cake', '800', '1000cl', 'No_bake_cheese_cake.jfif', '2', 'No bake cheese cake...From a special recipe', '2020-05-22 03:13:20', '2020-05-22 03:13:20'),
-(8, 'pancake', '400', '500cl', 'pancake.jfif', '2', 'Pancakes different from other\'s ones', '2020-05-22 03:13:55', '2020-05-22 03:13:55'),
-(9, 'Red_velvet_cake', '800', '1000cl', 'Red_velvet_cake.jfif', '2', 'Red velvet tasty dessert', '2020-05-22 03:14:29', '2020-05-22 03:14:29'),
-(10, 'cheese_burger', '500', '700cl', 'cheese_burger.jfif', '3', 'Cheese burger.....', '2020-05-22 03:15:30', '2020-05-22 03:15:30'),
-(11, 'Hamburger', '500', '700cl', 'hamburger.jfif', '3', 'Hamburger....', '2020-05-22 03:16:07', '2020-05-22 03:16:07'),
-(12, 'smash_burger', '700', '800cl', 'smash_burger.jfif', '3', 'Smash burger....', '2020-05-22 03:16:49', '2020-05-22 03:16:49'),
-(13, 'vegan_burger', '300', '500cl', 'vegan_burger.jfif', '3', 'For vegetarians', '2020-05-22 03:17:22', '2020-05-22 03:17:22'),
-(14, 'can pepci', '150', '200cl', 'can-pepsi.png', '4', 'One bottle is enough for one person.', '2020-05-22 03:18:13', '2020-05-22 03:18:13'),
-(15, 'Coke', '350', '500cl', 'cock.jfif', '4', 'You can get 10% off from our special offer in this week', '2020-05-22 03:19:11', '2020-05-22 03:19:11'),
-(16, 'Sprite', '400', '550cl', 'sprite.jfif', '4', 'One bottle enough for one person at a time.Energized drink.', '2020-05-22 03:19:40', '2020-05-22 03:19:40'),
-(18, 'Fanta', '400', '500cl', 'fanta.jpeg', '4', 'Fanta has 10% offer in this week', '2020-05-22 03:22:17', '2020-05-22 03:22:17');
+(15, 'Coke', '350', '500cl', '1590760619.jfif', '4', 'You can get 10% off from our special offer in this week', '2020-05-22 03:19:11', '2020-05-29 08:26:59'),
+(16, 'Sprite', '400', '550cl', '1590760627.jpeg', '4', 'One bottle enough for one person at a time.Energized drink.', '2020-05-22 03:19:40', '2020-05-29 08:27:07'),
+(18, 'Fanta', '400', '500cl', '1590760635.jfif', '4', 'Fanta has 10% offer in this week', '2020-05-22 03:22:17', '2020-05-29 08:27:15'),
+(19, 'Pepci', '300', '150cl', '1592118402.png', '4', 'You can get 10% off from our special offer in this week', '2020-06-14 01:36:42', '2020-06-14 01:36:42'),
+(20, 'Choco love rose cake', '800', '900cl', '1592118484.jfif', '1', 'choco love rose cake....Specially for your loved once', '2020-06-14 01:38:04', '2020-06-14 01:38:04'),
+(21, 'divine cake', '900', '1000cl', '1592118520.jfif', '1', 'Divine cake with cherries', '2020-06-14 01:38:40', '2020-06-14 01:38:40'),
+(22, 'Happy birthday cake', '900', '1000cl', '1592118560.jfif', '1', 'For your loved ones birthday', '2020-06-14 01:39:20', '2020-06-14 01:39:20'),
+(23, 'Pineapple cake', '700', '800cl', '1592118594.jpg', '1', 'Made using fresh pineapples', '2020-06-14 01:39:54', '2020-06-14 01:39:54'),
+(24, 'chocolate and mint cake', '600', '700cl', '1592118649.jpg', '2', 'Chocolate and mint taste added for this cake...only from our hotel in badulla', '2020-06-14 01:40:49', '2020-06-14 01:40:49'),
+(25, 'creme brulee', '800', '1000cl', '1592118715.jfif', '2', 'cremee cake.....newly introduce one', '2020-06-14 01:41:55', '2020-06-14 01:41:55'),
+(26, 'No bake cheese cake', '900', '1000cl', '1592118766.jfif', '2', 'No bake cheese cake...From a special recipe', '2020-06-14 01:42:46', '2020-06-14 01:42:46'),
+(27, 'Pancake', '400', '500cl', '1592118792.jfif', '2', 'Pancakes different from other\'s ones', '2020-06-14 01:43:12', '2020-06-14 01:43:12'),
+(28, 'Red velvet cake', '800', '900cl', '1592118817.jfif', '2', 'Red velvet tasty dessert', '2020-06-14 01:43:37', '2020-06-14 01:43:37'),
+(29, 'Cheese burger', '600', '900cl', '1592118859.jfif', '3', 'Cheese burger.....', '2020-06-14 01:44:19', '2020-06-14 01:44:19'),
+(30, 'Hamburger', '700', '800cl', '1592118939.jfif', '3', 'Hamburger....', '2020-06-14 01:45:39', '2020-06-14 01:45:39'),
+(31, 'Smash burger', '800', '900cl', '1592118968.jfif', '3', 'Smash burger....', '2020-06-14 01:46:08', '2020-06-14 01:46:08'),
+(32, 'Vegan burger', '400', '500cl', '1592118998.jfif', '3', 'For vegetarians', '2020-06-14 01:46:38', '2020-06-14 01:46:38');
 
 -- --------------------------------------------------------
 
@@ -427,7 +476,7 @@ CREATE TABLE `guides` (
 --
 
 INSERT INTO `guides` (`id`, `first_name`, `last_name`, `dob`, `gender`, `guidequalifications`, `nic`, `mobileno`, `email`, `username`, `password`, `conpassword`, `image`, `created_at`, `updated_at`) VALUES
-(11, 'test', 'guide', '1996-07-01', 'Male', 'Undergraduate at UWU', '961832322v', '0775094902', 'lsanjeewa947@gmail.com', 'testguide', '123456', '123456', '1588176736.jpg', '2020-04-29 10:42:16', '2020-04-29 10:42:16');
+(14, 'Lasantha', 'Sanjeewa', '1996-07-01', 'Male', 'Unhggda hdh', '961832322v', '0775094902', 'lsanjeewa947@gmail.com', 'lasantha', '123456', '123456', '1590989636.png', '2020-06-01 00:03:56', '2020-06-01 00:03:56');
 
 -- --------------------------------------------------------
 
@@ -540,7 +589,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (17, '2020_01_15_022258_create_foodorders_table', 2),
 (18, '2020_03_02_072829_create_tour_type_table', 3),
 (19, '2020_03_02_073123_create_tours_table', 3),
-(20, '2020_03_02_073305_create_treserves_table', 3);
+(20, '2020_03_02_073305_create_treserves_table', 3),
+(21, '2020_04_04_000000_create_user_follower_table', 4),
+(22, '2020_06_08_185336_create_posts_table', 5);
 
 -- --------------------------------------------------------
 
@@ -554,6 +605,13 @@ CREATE TABLE `news` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`id`, `Description`, `created_at`, `updated_at`) VALUES
+(1, 'You can get 10% offer for all the room booking in June month.......', '2020-05-29 08:35:19', '2020-05-29 08:35:19');
 
 -- --------------------------------------------------------
 
@@ -574,6 +632,19 @@ CREATE TABLE `password_resets` (
 INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
 ('lsanjeewa947@gmail.com', '$2y$10$Vcbjx3Mz8jZQI9J0rkImvOQum9TObFla5LFmnBLs2OyG0LTCAjDAS', '2020-04-28 03:20:28'),
 ('greenmount049@gmail.com', '$2y$10$FYhAO6aGBa/K.slyio0XG.MMVeXmiIYF7eoA.Y4opsOJZSCTfz35C', '2020-04-28 03:23:29');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `posts`
+--
+
+CREATE TABLE `posts` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -689,7 +760,10 @@ CREATE TABLE `rooms` (
 
 INSERT INTO `rooms` (`id`, `floor`, `availability`, `status`, `description`, `t_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 1, 1, 1, 'Good condition', 1, '2020-05-19 02:56:54', '2020-05-19 02:56:54', NULL),
-(2, 1, 1, 1, 'double ac rom', 2, '2020-05-19 02:57:07', '2020-05-19 02:57:07', NULL);
+(2, 1, 1, 1, 'double ac rom', 2, '2020-05-19 02:57:07', '2020-05-19 02:57:07', NULL),
+(3, 2, 1, 1, 'jkh', 3, '2020-05-29 08:10:05', '2020-05-29 08:10:05', NULL),
+(4, 2, 0, 1, 'kjhj', 1, '2020-05-29 08:10:54', '2020-05-29 08:10:54', NULL),
+(5, 3, 1, 1, 'jhj', 2, '2020-05-29 08:11:30', '2020-05-29 08:11:30', NULL);
 
 -- --------------------------------------------------------
 
@@ -714,8 +788,9 @@ CREATE TABLE `room_types` (
 --
 
 INSERT INTO `room_types` (`id`, `name`, `total`, `available`, `description`, `base_price`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Simgle', 0, 0, 'single rom', 10000, '2020-05-19 02:56:18', '2020-05-19 02:56:18', NULL),
-(2, 'Double', 0, 0, 'Doouble room', 20000, '2020-05-19 02:56:35', '2020-05-19 02:56:35', NULL);
+(1, 'Dulex room', 0, 0, 'single rom', 5000, '2020-05-19 02:56:18', '2020-05-19 02:56:18', NULL),
+(2, 'Suite room', 0, 0, 'Double room', 3000, '2020-05-19 02:56:35', '2020-05-19 02:56:35', NULL),
+(3, 'Standard room', 0, 0, 'hhj', 7500, '2020-05-29 08:09:08', '2020-05-29 08:09:08', NULL);
 
 -- --------------------------------------------------------
 
@@ -802,7 +877,22 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(3, 'testuser', 'testuser@gmail.com', NULL, '$2y$10$YanUeeuZGl2jISk.K9Yxm.VmQblTlIX4AgFF6mLI4ceTMvn7WNaOG', NULL, '2020-04-28 03:13:39', '2020-04-28 03:13:39');
+(9, 'Lasantha', 'lsanjeewa947@gmail.com', NULL, '$2y$10$YuaXRmpGVxEVJFyMmGlTmOh8xHfhWJtgn9cuMGMRIe6SD/Ez9Zs.6', NULL, '2020-06-14 13:41:38', '2020-06-14 13:41:38');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_follower`
+--
+
+CREATE TABLE `user_follower` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `following_id` bigint(20) UNSIGNED NOT NULL,
+  `follower_id` bigint(20) UNSIGNED NOT NULL,
+  `accepted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Indexes for dumped tables
@@ -825,6 +915,12 @@ ALTER TABLE `attendences`
 -- Indexes for table `books`
 --
 ALTER TABLE `books`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `canceltdetails`
+--
+ALTER TABLE `canceltdetails`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -948,6 +1044,12 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
+-- Indexes for table `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `reports_visnas`
 --
 ALTER TABLE `reports_visnas`
@@ -1017,6 +1119,15 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
+-- Indexes for table `user_follower`
+--
+ALTER TABLE `user_follower`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_follower_following_id_index` (`following_id`),
+  ADD KEY `user_follower_follower_id_index` (`follower_id`),
+  ADD KEY `user_follower_accepted_at_index` (`accepted_at`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -1030,7 +1141,13 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- AUTO_INCREMENT for table `canceltdetails`
+--
+ALTER TABLE `canceltdetails`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -1048,7 +1165,7 @@ ALTER TABLE `cats`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `employees`
@@ -1084,13 +1201,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `fooditems`
 --
 ALTER TABLE `fooditems`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `foodorders`
@@ -1102,7 +1219,7 @@ ALTER TABLE `foodorders`
 -- AUTO_INCREMENT for table `guides`
 --
 ALTER TABLE `guides`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `leave_types`
@@ -1114,13 +1231,19 @@ ALTER TABLE `leave_types`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `reports_visnas`
@@ -1156,7 +1279,13 @@ ALTER TABLE `treserves`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `user_follower`
+--
+ALTER TABLE `user_follower`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
