@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
         body {
-            background-color: #33cccc;
+            background-color: #ced3d6;
             background-size: cover;
             height: 100%;
         }
@@ -23,7 +23,7 @@
         <br>
         <h1>
             <font color="blue">You can update your profile</font>
-            <a href="/sglog" class="btn btn-warning" role="button">Back</a>
+            <a href="/sglog" class="btn btn-success" role="button">Back</a>
         </h1>
         <h3 class="text-center text-warning">{{ Session::get('message')}}</h3>
         <br>

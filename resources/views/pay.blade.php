@@ -34,7 +34,7 @@
 					{{ csrf_field() }}
 					<div class='form-row'>
 						<div class='col-xs-12 form-group required'>
-							<label class='control-label'>Name on Card</label> <input class='form-control' size='4' type='text'>
+							<label class='control-label'>Name</label> <input class='form-control' size='4' type='text'>
 						</div>
 					</div>
 					<div class='form-row'>
@@ -52,13 +52,16 @@
 						<div class='col-xs-4 form-group expiration required'>
 							<label class='control-label'> </label> <input class='form-control card-expiry-year' placeholder='YYYY' size='4' type='text'>
 						</div>
-					</div>
-
-					<div class='form-row'>
 						<div class='col-xs-12 form-group card required'>
-							Total: <span class='amount'> <input></span>
+							Total <span class='amount'>
+								<select id="yeardropdown" type="text" name="amount" class="form-control">
+									<option selected>4000</option>
+									<option selected>3000</option>
+									<option selected>2000</option>
+									<option selected>1000</option>
+								</select>
+							</span>
 						</div>
-
 					</div>
 
 					<div class='form-row'>

@@ -64,15 +64,15 @@ Route::post('/payy', function (Request $request) {
     \Stripe\Stripe::setApiKey('sk_test_jaXjNcbn3pLsh7vkAKpvRwF8');
     try {
         \Stripe\Charge::create(array(
-            "amount" => 300 * 100,
+            "amount" => $request->input('amount') * 100,
             "currency" => "lkr",
             "source" => $request->input('stripeToken'), // obtained with Stripe.js
             "description" => "Green Tel Payment"
         ));
-        Session::flash('success-message', 'Payment done successfully !');
+        Session::flash('success-message', 'Payment done successfully');
         return Redirect::back();
     } catch (\Exception $e) {
-        Session::flash('fail-message', "Error! Please Try again.");
+        Session::flash('fail-message', "Please Try again.");
         return Redirect::back();
     }
 });
@@ -155,6 +155,10 @@ Route::post("canceltbook", 'TCancelController@store');
 Route::get('/customerdash', function () {
     return view('cusdash');
 });
+
+//customer delete
+Route::get('/cusdelete', 'cusDeleteController@index');
+Route::get('delete2/{id}', 'cusDeleteController@destroy');
 
 //sinidu routes--------------------------------------------------------------------------
 //booking routes

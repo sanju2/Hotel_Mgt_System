@@ -89,7 +89,7 @@
             <td>{{ $user->email }}</td>
             <td>{{ $user->place }}</td>
             <td>{{ $user->dates }}</td>
-            <td><a href='delete/{{ $user->id }}' class="text-primary">Cancel Tour</a></td>
+            <td><a href='delete/{{ $user->id }}' class="text-warning">Cancel Tour</a></td>
         </tr>
         @endforeach
     </table>
@@ -164,7 +164,7 @@
             <button class="btn btn-success">SEND</button>
         </div>
     </form>
-
+    <br />
 </body>
 
 </html>

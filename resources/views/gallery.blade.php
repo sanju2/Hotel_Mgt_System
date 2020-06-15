@@ -156,24 +156,24 @@
 
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a href="{{asset('gall/g6.jpg')}}" class="fancybox" rel="ligthbox">
-                    <img src="{{asset('gall/g6.jpg')}}" class="zoom img-fluid " alt="">
+                    <img src="{{asset('gall/g12.jpg')}}" class="zoom img-fluid " alt="">
                 </a>
             </div>
 
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a href="{{asset('gall/g7.jpg')}}" class="fancybox" rel="ligthbox">
-                    <img src="{{asset('gall/g7.jpg')}}" class="zoom img-fluid " alt="">
+                    <img src="{{asset('gall/g9.jpg')}}" class="zoom img-fluid " alt="">
                 </a>
             </div>
 
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a href="{{asset('gall/g8.jpg')}}" class="fancybox" rel="ligthbox">
-                    <img src="{{asset('gall/g8.jpg')}}" class="zoom img-fluid " alt="">
+                    <img src="{{asset('gall/g10.jpg')}}" class="zoom img-fluid " alt="">
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a href="{{asset('gall/g8.jpg')}}" class="fancybox" rel="ligthbox">
-                    <img src="{{asset('gall/g8.jpg')}}" class="zoom img-fluid " alt="">
+                    <img src="{{asset('gall/g11.jpg')}}" class="zoom img-fluid " alt="">
                 </a>
             </div>
 

@@ -15,6 +15,8 @@
             font-weight: 100;
             height: 100vh;
             margin: 0;
+
+
         }
 
         .productbox {
@@ -93,9 +95,9 @@
     &nbsp;
     &nbsp;
     &nbsp;
-    <a href="/bookss" class="btn btn-success" role="button">Book Now</a>
-    <a href="/customerdash" class="btn btn-warning" role="button">Back</a>
-    <a href="/generate-pdf" class="btn btn-primary" role="button">Generate Pdf</a>
+    <a href="/bookss" class="btn btn-success btn-lg" role="button">Book Now</a>
+    <a href="/generate-pdf" class="btn btn-primary btn-lg" role="button">Generate Pdf</a>
+    <a href="/customerdash" class="btn btn-warning btn-lg" role="button">Back</a>
 
 </body>
 
