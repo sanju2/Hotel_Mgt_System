@@ -154,7 +154,7 @@
     <form action="" method="post">
         @csrf
         <div class="container">
-            <h1>Email Send to Inform</h1>
+            <h1>Sending an Email</h1>
             @if(session('success'))
             <b>{{session('success')}}</b>
             @endif

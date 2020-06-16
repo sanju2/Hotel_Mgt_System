@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <title>Hotel : User Dashborad</title>
 
 </head>
@@ -32,12 +33,13 @@
 
                         You are logged in as <strong> User </strong>!<br /><br />
                         <h3 class="text-center text-success">{{ Session::get('message')}}</h3>
-                        <a href='/change-password'> <input type="button" name="register" class="btn btn-primary btn-lg" value="Change Password" /></a> <br /><br />
-                        <a href='/item'> <input type="button" name="register" class="btn btn-primary btn-lg" value="Food Delivery" /></a> <br /><br />
-                        <a href='/book'> <input type="button" name="register" class="btn btn-primary btn-lg" value="Book Room" /></a> &nbsp; &nbsp;
-                        <a href='/sendmail'> <input type="button" name="register" class="btn btn-info btn-lg" value="Cancel Room Booking" /></a> <br /><br />
-                        <a href='/TP'> <input type="button" name="register" class="btn btn-primary btn-lg" value="Book Tour" /></a> &nbsp; &nbsp;
-                        <a href='/bcancel'> <input type="button" name="register" class="btn btn-info btn-lg" value="Cancel Tour Booking" /></a> <br /><br />
+                     
+                        <a href="/change-password"><i class="fa fa-key fa-2x"></i> {{ __('Change Password') }}</a><br /><br />
+                        <a href="/item"><i class=" fa fa-cutlery fa-2x"></i> {{ __('Food Delivery') }}</a><br /><br />
+                        <a href="/book"><i class=" fa fa-book fa-2x"></i> {{ __('Book Room') }}</a> &nbsp; &nbsp;
+                        <a href="/sendmail"><i class=" fa fa-ban fa-2x"></i> {{ __('Cancel Room Booking') }}</a><br /><br />
+                        <a href="/TP"><i class="fa fa-bookmark fa-2x"></i> {{ __('Book Tour') }}</a> &nbsp; &nbsp;
+                        <a href="/bcancel"><i class=" fa fa-ban fa-2x"></i> {{ __('Cancel Tour Booking') }}</a><br /><br />
                     </div>
                 </div>
             </div>

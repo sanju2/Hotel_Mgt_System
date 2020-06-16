@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2020 at 09:31 PM
+-- Generation Time: Jun 15, 2020 at 06:46 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -91,7 +91,7 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `name`, `phone`, `email`, `place`, `dates`, `created_at`, `updated_at`) VALUES
-(28, 'Lasantha', '0775094902', 'lsanjeewa947@gmail.com', 'Galle', '4', '2020-06-14 13:42:56', '2020-06-14 13:42:56');
+(30, 'Lasnatha', '0775094902', 'lsanjeewa947@gmail.com', 'Galle', '2', '2020-06-15 09:56:44', '2020-06-15 09:56:44');
 
 -- --------------------------------------------------------
 
@@ -877,7 +877,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(9, 'Lasantha', 'lsanjeewa947@gmail.com', NULL, '$2y$10$YuaXRmpGVxEVJFyMmGlTmOh8xHfhWJtgn9cuMGMRIe6SD/Ez9Zs.6', NULL, '2020-06-14 13:41:38', '2020-06-14 13:41:38');
+(10, 'Lasantha', 'lsanjeewa18@gmail.com', NULL, '$2y$10$xKSq7ZHH46A.mJAG7KFhUOTTdM8ozz0ATSojlOuJhy1tyqFG6ymWq', NULL, '2020-06-15 10:41:32', '2020-06-15 10:41:32'),
+(11, 'Navodya', 'navodya@gmail.com', NULL, '$2y$10$0jHg5EtXu8STeZ3bXLmvRe0fMABgwiL/iyyyqdmTw4ol4AiRGf1mK', NULL, '2020-06-15 10:42:09', '2020-06-15 10:42:09'),
+(12, 'Tharindu', 'tharindu@gmail.com', NULL, '$2y$10$zjiUQASWVkEUgwLWk2Qm4ePOq3jA68tv3D3s/6j1Tlul91WKvITx.', NULL, '2020-06-15 10:43:28', '2020-06-15 10:43:28'),
+(13, 'Sinidu', 'sinidu@gmail.com', NULL, '$2y$10$kCHNof7ZtVbdGQDGUhOLLOyoD9QYLcRasr5guEDtr1TSe07B4eLZm', NULL, '2020-06-15 10:44:23', '2020-06-15 10:44:23');
 
 -- --------------------------------------------------------
 
@@ -1141,7 +1144,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `canceltdetails`
@@ -1219,7 +1222,7 @@ ALTER TABLE `foodorders`
 -- AUTO_INCREMENT for table `guides`
 --
 ALTER TABLE `guides`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `leave_types`
@@ -1279,7 +1282,7 @@ ALTER TABLE `treserves`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `user_follower`
